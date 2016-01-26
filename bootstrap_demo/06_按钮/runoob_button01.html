@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Bootstrap 实例 - 按钮</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+   <script src="../bootstrap/jquery/jquery-1.8.2.min.js"></script>
+   <script src="../bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+   <h1>实例：按钮</h1>
+	任何带有 class .btn 的元素都会继承圆角灰色按钮的默认外观。但是 Bootstrap 提供了一些选项来定义按钮的样式
+         <table class="table table-striped table-bordered table-hover table-condensed">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Firstname</th>
+          </tr>
+        </thead>
+        <tbody>
+			<tr><td>.btn 		</td>  <td>	为按钮添加基本样式 </td></tr>	
+			<tr><td>.btn-default</td>  <td> 默认/标准按钮 	</td></tr>	
+			<tr><td>.btn-primary</td>  <td> 原始按钮样式（未被操作）</td> </tr>		
+			<tr><td>.btn-success</td>  <td> 表示成功的动作 	</td></tr>	
+			<tr><td>.btn-info 	</td>  <td>	该样式可用于要弹出信息的按钮 </td></tr>		
+			<tr><td>.btn-warning</td>  <td> 表示需要谨慎操作的按钮 	</td></tr>	
+			<tr><td>.btn-danger </td>  <td>	表示一个危险动作的按钮操作 </td></tr>		
+			<tr><td>.btn-link 	</td>  <td>	让按钮看起来像个链接 (仍然保留按钮行为) </td>	</tr>	
+			<tr><td>.btn-lg 	</td>  <td> 制作一个大按钮 	</td></tr>	
+			<tr><td>.btn-sm 	</td>  <td> 制作一个小按钮 	</td></tr>	
+			<tr><td>.btn-xs 	</td>  <td> 制作一个超小按钮 	</td></tr>	
+			<tr><td>.btn-block 	</td>  <td> 块级按钮(拉伸至父元素100%的宽度) </td>	</tr>	
+			<tr><td>.active 	</td>  <td> 按钮被点击 	</td></tr>	
+			<tr><td>.disabled 	</td>  <td> 禁用按钮</td></tr>	
+		</tbody>
+		</table>
+		
+	<hr>
+	
+	<p> .btn 类是按钮的基本样式:</p>
+    <button type="button" class="btn">基本按钮</button>
+	
+	
+	
+	<hr>
+	
+	<p> .btn-default 类是默认/标准按钮样式:</p>
+    <button type="button" class="btn btn-default">默认</button>
+	
+	
+	<hr>
+	
+	<p> .btn-primary 类可表示为原始按钮样式（未被操作）:</p>      
+    <button type="button" class="btn btn-primary">原始按钮</button>
+	
+	<hr>
+	
+	<p>.btn-success 表示操作成功后的按钮样式:</p>      
+    <button type="button" class="btn btn-success">成功</button>
+	
+	<hr>
+	
+	<p> .btn-info 类表示点击按钮后会弹出提示信息:</p>            
+    <button type="button" class="btn btn-info">信息</button>
+	
+	<hr>
+	
+	<p>.btn-warning  该样式表示需要谨慎操作的按钮:</p>            
+    <button type="button" class="btn btn-warning">Warning</button>
+	
+	<hr>
+	
+	<p>.btn-danger 表示一个危险动作的按钮:</p>                  
+    <button type="button" class="btn btn-danger">危险</button>
+      
+	<hr>
+	
+	<p>.btn-link 类让按钮看起来像个链接（仍然保持按钮的行为） :</p>                        
+    <button type="button" class="btn btn-link">链接</button>
+	
+	<hr>
+	
+	<p>.btn-lg 类制作大按钮：</p>            
+    <button type="button" class="btn btn-default btn-lg">大的默认按钮</button>
+    <button type="button" class="btn btn-info btn-lg">大的信息按钮</button>
+	
+	<hr>
+	
+	<p>.btn-sm 类制作小按钮:</p>            
+    <button type="button" class="btn btn-default btn-sm">小的默认按钮</button>
+    <button type="button" class="btn btn-info btn-sm">小的信息按钮</button>  
+	
+	<hr>
+	
+	<p> .btn-xs 类制作一个超小的按钮:</p>            
+    <button type="button" class="btn btn-default btn-xs">超小默认的按钮</button>
+    <button type="button" class="btn btn-info btn-xs">超小信息按钮x</button> 
+	
+	<hr>
+	
+		<p>.btn-block 类制作一个块级按钮(拉伸至父元素100%的宽度)：</p>            
+    <button type="button" class="btn btn-info btn-block">块级按钮</button>
+	
+	<hr>
+	
+		  <p> .active 类表示按钮被点击:</p>            
+	  <button type="button" class="btn btn-default">默认按钮</button>      
+	  <button type="button" class="btn btn-default active">点击激活的默认按钮</button>
+	  <br><br>
+	  <button type="button" class="btn btn-info">信息按钮</button>      
+	  <button type="button" class="btn btn-info active">点击激活的信息按钮</button>
+	
+	<hr>
+	
+	      <p> disabled 属性可制作一个禁用的按钮：</p>            
+      <button type="button" class="btn btn-default" disabled="disabled">禁用的默认按钮</button>
+      <br><br>
+      <p> .disabled 类使得链接不可用:</p>                  
+      <a href="#" class="btn btn-info disabled" role="button">禁用的信息链接</a>    
+      
+	<hr>
+	
+	<!-- 标准的按钮 -->
+	<button type="button" class="btn btn-default">默认按钮</button>
+	
+	<!-- 提供额外的视觉效果，标识一组按钮中的原始动作 -->
+	<button type="button" class="btn btn-primary">原始按钮</button>
+	
+	<!-- 表示一个成功的或积极的动作 -->
+	<button type="button" class="btn btn-success">成功按钮</button>
+	
+	<!-- 信息警告消息的上下文按钮 -->
+	<button type="button" class="btn btn-info">信息按钮</button>
+	
+	<!-- 表示应谨慎采取的动作 -->
+	<button type="button" class="btn btn-warning">警告按钮</button>
+	
+	<!-- 表示一个危险的或潜在的负面动作 -->
+	<button type="button" class="btn btn-danger">危险按钮</button>
+	
+	<!-- 并不强调是一个按钮，看起来像一个链接，但同时保持按钮的行为 -->
+	<button type="button" class="btn btn-link">链接按钮</button>
+	
+	<hr>
+	
+	<h2>按钮大小</h2>
+	
+	<p>
+   <button type="button" class="btn btn-primary btn-lg">
+      大的原始按钮
+   </button>
+   <button type="button" class="btn btn-default btn-lg">
+      大的按钮
+   </button>
+	</p>
+	<p>
+	   <button type="button" class="btn btn-primary">
+	      默认大小的原始按钮
+	   </button>
+	   <button type="button" class="btn btn-default">
+	      默认大小的按钮
+	   </button>
+	</p>
+	<p>
+	   <button type="button" class="btn btn-primary btn-sm">
+	      小的原始按钮
+	   </button>
+	   <button type="button" class="btn btn-default btn-sm">
+	      小的按钮
+	   </button>
+	</p>
+	<p>
+	   <button type="button" class="btn btn-primary btn-xs">
+	      特别小的原始按钮
+	   </button>
+	   <button type="button" class="btn btn-default btn-xs">
+	      特别小的按钮
+	   </button>
+	</p>
+	<p>
+	   <button type="button" class="btn btn-primary btn-lg btn-block">
+	      块级的原始按钮
+	   </button>
+	   <button type="button" class="btn btn-default btn-lg btn-block">
+	      块级的按钮
+	   </button>
+	</p>
+
+
+	<hr>
+	
+	<h2>按钮状态</h2>
+	
+	<p>
+   <button type="button" class="btn btn-default btn-lg ">
+      默认按钮
+   </button>
+   <button type="button" class="btn btn-default btn-lg active">
+      激活按钮
+   </button>
+	</p>
+	<p>
+	   <button type="button" class="btn btn-primary btn-lg ">
+	      原始按钮
+	   </button>
+	   <button type="button" class="btn btn-primary btn-lg active">
+	      激活的原始按钮
+	   </button>
+	</p>
+
+	<hr>
+	
+	<h2>禁用状态</h2>
+	
+	<p>
+   <button type="button" class="btn btn-default btn-lg">
+      默认按钮
+   </button>
+   <button type="button" class="btn btn-default btn-lg" disabled="disabled">
+      禁用按钮
+   </button>
+	</p>
+	<p>
+	   <button type="button" class="btn btn-primary btn-lg ">
+	      原始按钮
+	   </button>
+	   <button type="button" class="btn btn-primary btn-lg" disabled="disabled">
+	      禁用的原始按钮
+	   </button>
+	</p>
+	<p>
+	   <a href="#" class="btn btn-default btn-lg" role="button">
+	      链接
+	   </a>
+	   <a href="#" class="btn btn-default btn-lg disabled" role="button">
+	      禁用链接
+	   </a>
+	</p>
+	<p>
+	   <a href="#" class="btn btn-primary btn-lg" role="button">
+	      原始链接
+	   </a>
+	   <a href="#" class="btn btn-primary btn-lg disabled" role="button">
+	      禁用的原始链接
+	   </a>
+	</p>
+
+	
+</div>
+</body>
+</html>
