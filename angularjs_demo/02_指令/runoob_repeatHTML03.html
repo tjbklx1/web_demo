@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<title>AngularJS 指令</title>
+</head>
+<body>
+	<h1>AngularJS 重复 HTML 元素</h1>
+	<h3><pre> 
+	ng-repeat 指令会重复一个 HTML 元素
+	</pre></h3>
+	
+	<div ng-app="" ng-init="names=['Jani','Hege','Kai']">
+	  <p>使用 ng-repeat 来循环数组</p>
+	  <ul>
+	    <li ng-repeat="x in names">
+	      {{ x }}
+	    </li>
+	  </ul>
+	<div>
+
+</body>
+</html>
