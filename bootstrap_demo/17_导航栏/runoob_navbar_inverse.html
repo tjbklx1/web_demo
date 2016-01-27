@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Bootstrap 实例 - 导航栏</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+   <script src="../bootstrap/jquery/jquery-1.8.2.min.js"></script>
+   <script src="../bootstrap/js/bootstrap.min.js"></script>
+	<style type="text/css">
+        body {
+            margin:30px
+        }
+        </style>
+</head>
+<body>
+<div class="container">
+
+<h1>Bootstrap 实例 - 倒置的导航栏</h1>
+
+<pre>
+为了创建一个带有黑色背景白色文本的倒置的导航栏，只需要简单地向 .navbar class 添加 .navbar-inverse class 即可
+
+为了防止导航栏与页面主体中的其他内容的顶部相交错，
+请向 body 标签添加至少 50 像素的内边距（padding），内边距的值可以根据您的需要进行设置。 
+</pre>
+
+<nav class="navbar navbar-inverse" role="navigation">
+   <div class="navbar-header">
+      <a class="navbar-brand" href="#">W3Cschool</a>
+   </div>
+   <div>
+      <ul class="nav navbar-nav">
+         <li class="active"><a href="#">iOS</a></li>
+         <li><a href="#">SVN</a></li>
+         <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               Java <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+               <li><a href="#">jmeter</a></li>
+               <li><a href="#">EJB</a></li>
+               <li><a href="#">Jasper Report</a></li>
+               <li class="divider"></li>
+               <li><a href="#">分离的链接</a></li>
+               <li class="divider"></li>
+               <li><a href="#">另一个分离的链接</a></li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+</nav>
+
+
+<hr>
+
+</div>
+</body>
+</html>

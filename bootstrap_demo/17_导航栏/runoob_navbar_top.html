@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Bootstrap 实例 - 导航栏</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+   <script src="../bootstrap/jquery/jquery-1.8.2.min.js"></script>
+   <script src="../bootstrap/js/bootstrap.min.js"></script>
+	<style type="text/css">
+        body {
+            margin:30px
+        }
+        </style>
+</head>
+<body>
+<div class="container">
+
+<h1>Bootstrap 实例 - 固定到顶部</h1>
+
+<pre>
+Bootstrap 导航栏可以动态定位。
+默认情况下，它是块级元素，它是基于在 HTML 中放置的位置定位的。
+通过一些帮助器类，您可以把它放置在页面的顶部或者底部，或者您可以让它成为随着页面一起滚动的静态导航栏。
+如果您想要让导航栏固定在页面的顶部，请向 .navbar class 添加 class .navbar-fixed-top。
+
+为了防止导航栏与页面主体中的其他内容的顶部相交错，请向 body 标签添加至少 50 像素的内边距（padding），内边距的值可以根据您的需要进行设置。 
+</pre>
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+   <div class="navbar-header">
+      <a class="navbar-brand" href="#">W3Cschool</a>
+   </div>
+   <div>
+      <ul class="nav navbar-nav">
+         <li class="active"><a href="#">iOS</a></li>
+         <li><a href="#">SVN</a></li>
+         <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               Java <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+               <li><a href="#">jmeter</a></li>
+               <li><a href="#">EJB</a></li>
+               <li><a href="#">Jasper Report</a></li>
+               <li class="divider"></li>
+               <li><a href="#">分离的链接</a></li>
+               <li class="divider"></li>
+               <li><a href="#">另一个分离的链接</a></li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+</nav>
+
+
+<hr>
+
+</div>
+</body>
+</html>
