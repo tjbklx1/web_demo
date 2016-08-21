@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../jquery-1.6.2.js"></script>
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	var startTime = new Date().getTime();
+	
+	$(document).ready(function(){
+			test1();
+	})
+	
+	function test1(){
+		 var endTime2  = new Date().getTime(); 
+		 var a = endTime2 - startTime;
+		 $("<div>jQuery的ready() : "+a+" ms</div>").appendTo("#div1");
+	}
+	function test2(){
+		var endtime1 = new Date().getTime();
+		var b = endtime1 - startTime;
+		$("<p>JavaScript的window.onload : "+b+" ms</p>").appendTo("#div1");
+	}
+</script>
+	
+<body  onload="test2();">
+
+	<img src="http://images.chinaiiss.com/attachment/image/201210/15/thumb/133404_736.jpg" />
+
+	<img src="http://www.infoq.com/resource/skyscraper/250/InfoQ%20Banner%20-%20ME4S.gif" />
+
+	<div id="div1"></div>
+
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+		<title>Untitled Document</title>
+		<style type="text/css">
+			.img {
+				display: none;
+			}
+			.num {
+				width: 15px;
+				height: 15px;
+				border:1px black solid;
+			}
+		</style>
+		<script type="text/javascript">
+			var n = 0;
+			var id;
+			onload = function(){
+				id = setInterval(changeImg, 1000);	// 每1秒钟执行1次changeImg
+				var div = document.getElementsByTagName("div")[0];
+				
+				div.onmouseenter = function(){
+					clearInterval(id);		// 鼠标进入时清除计时器
+				}
+				
+				div.onmouseleave = function(){
+					id = setInterval(changeImg, 1000);		// 鼠标移出时再次开始计时器
+				}
+				
+				function changeImg(){
+					var imgArr = document.images;	// 获取document中所有的图片
+					for(var x = 0; x < 4; x++)	// 隐藏所有图片
+						imgArr[x].style.display = "none";
+					imgArr[++n % 4].style.display = "block";	// 每次显示1个
+				}
+			}
+			
+			function showImg(index){
+				var imgArr = document.images;	// 获取document中所有的图片
+				for(var x = 0; x < 4; x++)	// 隐藏前4个
+					imgArr[x].style.display = "none";
+				imgArr[index].style.display = "block";	// 显示传入的号码对应的图片
+			}
+		</script>
+	</head>
+	<body>
+		<div style="width:320px; height:320px">
+			<img src="img/a.jpg" style="display:block">
+			<img src="img/b.jpg" class="img">
+			<img src="img/c.jpg" class="img">
+			<img src="img/d.jpg" class="img">
+			<div style="position:absolute; top:300px; left:220px">
+				<a href="javascript:showImg(0)"><img src="img/1.jpg" class="num"></a>
+				<a href="javascript:showImg(1)"><img src="img/2.jpg" class="num"></a>
+				<a href="javascript:showImg(2)"><img src="img/3.jpg" class="num"></a>
+				<a href="javascript:showImg(3)"><img src="img/4.jpg" class="num"></a>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="js_demo_base_itcast"
+  id="myeclipse.1318309779290"
+  context-root="/js_demo_base_itcast"
+  j2ee-spec="5.0"
+  archive="js_demo_base_itcast.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+

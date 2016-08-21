@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ajax 的案例</title>
+<script type="text/javascript" src="tools.js"></script>
+</head>
+<body>
+	test01<br>
+   	本例通过建立通用方法gethttp.js来测试ie或firefox<br>
+	<button onclick="test01();">test</button>
+   	<hr>
+   	
+   	test02<br>
+   	get方式提交<br>
+   	<button onclick="test02();">test</button>
+   	<hr/>
+   	
+   	test03<br>
+   	<button onclick="test03();">通过POST获取服务器时间</button>
+   	<hr/>
+
+   	test04<br>
+   	<input type="text" id="_name"/><br/>
+   	<button onclick="test04();">通过POST获取服务器时间</button>
+ 	<hr/>  
+
+ 	
+ 	test05<br>
+ 	判断名称是否可用<br>
+ 	Name:<input type="text" onchange="test05(this);"/><label id="p"></label>	
+   	
+</body>
+
+	<script type="text/javascript">
+	//http需要外部定义
+	var http=getHttp();
+	function test01() {
+	//	http = getHttp();
+		alert("test01 : "+http);
+	}
+
+	function test02() {
+	//	http = getHttp();
+		var url = "data/time.jsp?name=wj";
+		http.open("get", url, true);
+		http.onreadystatechange = back;
+		http.send(null);
+	}
+
+	function test03(){
+	//	http =getHttp();
+	  	var url ="data/time.jsp";
+	  	http.open("POST",url,true);
+	  	http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	  	http.onreadystatechange=back;
+	  	http.send("name=中国");	  	
+	}
+
+	function test04(){
+		var input_name = _name.value;
+	//	http =getHttp();
+		var url ="data/time.jsp";
+		http.open("POST",url,true);
+		http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		http.onreadystatechange=back;
+		http.send("name="+input_name);	  	
+	}
+
+	function test05(obj){
+	//	http =getHttp();
+		http.open("POST","data/change.jsp",true);
+ 		http.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+		http.onreadystatechange=function(){
+		 if(http.readyState==4){
+			 if(http.status==200){
+				 var txt = http.responseText;
+				 if(txt==0){
+					 p.innerHTML="<font color='green'>可以使用</font>";
+				 }else{
+					 p.innerHTML="<font color='red'>请换一个</font>";
+				 }
+			 }
+		 }
+		} 
+		var param = "name="+obj.value;
+		http.send(param);	  	
+	}
+	
+</script>
+</html>

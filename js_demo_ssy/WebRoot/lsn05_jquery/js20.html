@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../jquery-1.6.2.js"></script>
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+
+/*
+var addMore = function()
+{
+	var div = document.getElementById("div1");
+
+	var br = document.createElement("br");
+	var input = document.createElement("input");
+	var button = document.createElement("input");
+
+	input.setAttribute("type", "file");
+	
+	button.setAttribute("type", "button");
+	button.setAttribute("value", "Remove");
+
+    button.onclick = function()
+	{
+		div.removeChild(br);
+		div.removeChild(input);
+		div.removeChild(button);
+	}
+
+
+	div.appendChild(br);
+	div.appendChild(input);
+	div.appendChild(button);
+}
+*/
+
+	var count = 0;
+
+	$(document).ready( function() {
+			$("input[type=button]").click(function() {
+				var br = $("<br>");
+				var input = $("<input type='file'>");
+				var button = $("<input type='button' value='Remove"+ (++count) + " '>");
+	
+				$("#div1").append(br).append(input).append(button);
+	
+				button.click(function() {
+					br.remove();
+					input.remove();
+					button.remove();
+				});
+			});
+	});
+</script>
+<body>
+	
+	<input type="file"> <input type="button" value="more...">
+
+	<div id="div1"></div>
+</body>
+</html>

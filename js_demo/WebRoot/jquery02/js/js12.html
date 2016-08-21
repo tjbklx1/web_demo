@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	function test(){
+		var e=event.srcElement;
+		alert(e.tagName);	
+	}
+</script>
+<body>
+	IE<br>
+	获取事件源的方法 ,js方式-----a标签没有成功,<br>
+	改成onclick事件则成功-----button标签成功了<br>
+	<a href="javascript:test();">a---href方式</a><br>
+	<button onclick="test();">button---onclick方式</button>
+</body>
+</html>

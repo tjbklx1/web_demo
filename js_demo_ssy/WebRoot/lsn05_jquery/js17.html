@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../jquery-1.6.2.js"></script>
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	$(document).ready( function(){
+			
+		var p = $("p");
+		var li = $("ul li:eq(1)");
+		var title = p.attr("title"); 
+		var title2 = li.attr("title");
+		var text = li.text();
+
+		alert(title+"  "+title2+"   "+text);
+
+		li.attr("title","new title");
+		
+	});
+</script>
+<body>
+
+	 <p title="hello world">您认为圣思园培训好不好呢？</p>
+	
+	 <ul>
+		 <li title="1">好</li>
+		 <li title="2">很好</li>
+		 <li title="3">非常好</li>
+		 <li title="4">特别好</li>
+		 <li title="5">太好了</li>
+		 <li title="6">好的无法描述了</li>
+	</ul>
+
+</body>
+</html>

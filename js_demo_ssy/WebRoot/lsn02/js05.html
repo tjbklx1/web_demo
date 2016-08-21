@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+
+//使用原型（prototype）方式创建对象
+/*
+	function Person() {
+		
+	}
+	
+	Person.prototype.username = "zhangsan";
+	Person.prototype.password = "123";
+
+	Person.prototype.getInfo = function()
+	{
+		alert(this.username + ", " + this.password);
+	}
+
+	var person = new Person();
+	var person2 = new Person();
+
+	person.username = "lisi";
+
+	person.getInfo();
+	person2.getInfo();
+*/
+
+/*
+	function Person() {
+
+	}
+
+	Person.prototype.username = new Array();
+	Person.prototype.password = "123";
+
+	Person.prototype.getInfo = function() {
+		alert(this.username + ", " + this.password);
+	}
+
+	var person = new Person();
+	var person2 = new Person();
+
+	person.username.push("zhangsan");
+	person.username.push("lisi");
+	person.password = "456";
+
+	person.getInfo();
+	person2.getInfo();
+
+*/
+
+/*
+
+	//使用原型+构造函数方式来定义对象
+	function Person() {
+		this.username = new Array();
+		this.password = "123";
+	}
+
+	Person.prototype.getInfo = function() {
+		alert(this.username + ", " + this.password);
+	}
+
+	var p = new Person();
+	var p2 = new Person();
+	var p3 = new Person();
+	p.username.push("zhangsan");
+	p2.username.push("lisi");
+
+	p.getInfo();
+	p2.getInfo();
+	p3.getInfo();
+
+*/
+
+	//如果对象为空 则为对象默认赋值
+	function Person() {
+		this.username = "zhangsan";
+		this.password = "123";
+
+		//alert(Person.flag);
+		if (typeof Person.flag == "undefined") {
+			alert("invoked");
+
+			Person.prototype.getInfo = function() {
+				alert(this.username + ", " + this.password);
+			}
+			Person.flag = true;
+		}
+	}
+
+	var p = new Person();
+	var p2 = new Person();
+
+	p.getInfo();
+	p2.getInfo();
+</script>
+<body>
+
+</body>
+</html>

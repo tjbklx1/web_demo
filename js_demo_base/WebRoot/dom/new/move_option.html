@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+		<title>Untitled Document</title>
+		<style type="text/css">
+			select {
+				width: 200px;
+			}
+			input {
+				position: absolute;
+				margin-left: 50px;
+			}
+		</style>
+		<script type="text/javascript">
+			onload = function(){
+				var leftSelect = document.getElementById("leftSelect");
+				var rightSelect = document.getElementById("rightSelect");
+				
+				leftSelect.onchange = function(){
+					var optionArr = rightSelect.options;
+					for(var x = 0; x < optionArr.length; x++)
+						optionArr[x].selected = false;
+				}
+				
+				rightSelect.onchange = function(){
+					var optionArr = leftSelect.options;
+					for(var x = 0; x < optionArr.length; x++)
+						optionArr[x].selected = false;
+				}
+				
+				document.getElementById("move2Right").onclick = function(){
+					var optionArr = leftSelect.options;					// 找到leftSelect中的所有option
+					for(var x = 0; x < optionArr.length; x++){
+						if(optionArr[x].selected)						// 遍历所有option, 判断哪个被选中了
+							rightSelect.appendChild(optionArr[x--]);	// 将选中的移动到rightSelect
+					}
+				}
+				
+				document.getElementById("move2Left").onclick = function(){
+					var optionArr = rightSelect.options;					// 找到leftSelect中的所有option
+					for(var x = 0; x < optionArr.length; x++){
+						if(optionArr[x].selected)						// 遍历所有option, 判断哪个被选中了
+							leftSelect.appendChild(optionArr[x--]);	// 将选中的移动到rightSelect
+					}
+				}
+				
+				document.getElementById("up").onclick = function(){
+					var optionArr = leftSelect.options;					// 找到leftSelect中的所有option
+					for(var x = 0; x < optionArr.length; x++){			// 遍历所有option, 判断哪个被选中了
+						if(optionArr[x].selected){
+							if(x == 0)
+								break;
+							leftSelect.insertBefore(optionArr[x], optionArr[x-1]);		// 将选中的option插入到前一个option的前面
+						}
+					}
+					optionArr = rightSelect.options;					// 找到leftSelect中的所有option
+					for(var x = 0; x < optionArr.length; x++){			// 遍历所有option, 判断哪个被选中了
+						if(optionArr[x].selected){
+							if(x == 0)
+								break;
+							rightSelect.insertBefore(optionArr[x], optionArr[x-1]);		// 将选中的option插入到前一个option的前面
+						}
+					}
+				}
+				
+				document.getElementById("down").onclick = function(){
+					var optionArr = leftSelect.options;					// 找到leftSelect中的所有option
+					for(var x = optionArr.length -1 ; x >= 0 ; x--){			// 遍历所有option, 判断哪个被选中了
+						if(optionArr[x].selected){
+							if(x == optionArr.length - 1)
+								break;
+							leftSelect.insertBefore(optionArr[x], optionArr[x+2]);		// 将选中的option插入到下一个的下一个option的前面
+						}
+					}
+					optionArr = rightSelect.options;					// 找到leftSelect中的所有option
+					for(var x = optionArr.length -1 ; x >= 0 ; x--){			// 遍历所有option, 判断哪个被选中了
+						if(optionArr[x].selected){
+							if(x == optionArr.length - 1)
+								break;
+							rightSelect.insertBefore(optionArr[x], optionArr[x+2]);		// 将选中的option插入到下一个的下一个option的前面
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<fieldset style="width:800px">
+				<legend>请选择要学习的课程</legend>
+				<br>
+				<br>
+				<select multiple="multiple" size="22" id="leftSelect">
+					<option>J2SE</option>
+					<option>HTML</option>
+					<option>JavaScript</option>
+					<option>XML</option>
+					<option>JavaWeb</option>
+					<option>MySQL</option>
+					<option>JDBC</option>
+					<option>Oracle</option>
+					<option>JQuery</option>
+					<option>Ajax</option>
+					<option>Struts2</option>
+					<option>Hibernate</option>
+					<option>Spring</option>
+					<option>Lucene</option>
+					<option>JBPM</option>
+					<option>SVN</option>
+					<option>OA项目</option>
+					<option>Xxx项目</option>
+					<option>Android</option>
+					<option>WebService</option>
+					<option>就业指导</option>
+				</select>
+				<input id="move2Right" type="button" value="→ 添加 →" style="margin-top:50px">
+				<input id="move2Left" type="button" value="← 删除 ←" style="margin-top:100px">
+				<input id="up" type="button" value="↑ 上移 ↑"  style="margin-top:200px">
+				<input id="down" type="button" value="↓ 下移 ↓"  style="margin-top:250px">
+				<select multiple="multiple" size="22" style="margin-left:200px;" id="rightSelect">
+				</select>
+				<br>
+				<br>
+			</fieldset>
+		</center>
+	</body>
+</html>

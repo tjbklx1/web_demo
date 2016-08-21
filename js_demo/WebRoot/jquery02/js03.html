@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../jquery-1.6.2.js"></script>
+<title>Insert title here</title>
+<style type="text/css">
+	.cRed{
+		font-style: red;
+	}
+
+</style>
+</head>
+<script type="text/javascript">
+
+	$(document).ready(function() {
+
+		$("a:eq(0)").click(function() {
+			var text_tag = $(this).text(); 		//text=innertext //ie firefox
+				alert("标签 " + text_tag);
+			});
+
+		$("#iId").click(function() {
+			var text_tag = $(this).text(); 		//text=innertext //ie firefox
+				alert("ID " + text_tag);
+			});
+
+		$(".cRed").click(function() {
+			var text_tag = $(this).text(); 		//text=innertext //ie firefox
+				alert("类 " + text_tag);
+			});
+
+		$("input").click(function() {
+			var input_text = $(this).text(); 			//text为空 指的是 innerhtml对应的文本
+				alert("text : " + input_text);
+
+			var input_val = $(this).val(); 			//val==value
+				alert("val : " + input_val);
+
+			var input_alt = $(this).attr("alt"); 	//val==value
+				alert("alt : " + input_alt);
+
+	//判断this 是不是jQuery对象 typeof instanceof
+				var boo = (this instanceof jQuery);
+				alert(boo);
+				boo = (this instanceof jQuery);
+				alert(boo);
+			});
+
+	});
+</script>
+<body>
+	<a href="#">标签</a><br><br>
+	<a href="#" id =iId>ID</a><br><br>
+	<a href="#" class=cRed>class</a><br><br>
+	<input type="button" alt="input标签" value="input_button" ><br><br>
+	<a href="#" id="i01" >test-test</a>
+</body>
+</html>

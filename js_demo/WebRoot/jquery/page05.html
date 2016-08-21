@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../jquery-1.6.2.js"></script>
+<title>Insert title here</title>
+<style>
+		div{
+			border:1px solid red;
+			width:100px;
+			height:100px;
+			float:left;
+			margin:3px;
+		}
+	</style>
+<script type="text/javascript">
+	$(function(){
+		$("#btn1").click(function(){
+/**		//js方式
+		var row =_tb.insertRow();
+		var cell=row.insertCell();
+		cell.innerHTML="hello";
+*/
+			var str="<tr><td>Name+++new form</td></tr>";
+			$("#_tb").html($("#_tb").html()+str);
+		//	var html =$("#_tb").html();
+		//	var html =$("#_tb").text();
+		//	alert(html);
+		
+		});
+		
+		var nm=$("input[name='nm']").val();
+		alert(nm);
+		$("input[name='nm']").val("VVVVVVVVVVVVVVVV");
+		
+		//$("").attr("","");
+		
+	});
+</script>
+</head>
+<body style="font-size:75%;">
+	<button id="btn1">Btn1</button>
+	<br/>
+	<input type="text" name="nm" value="jackEEEEEEEE">
+	<br/>
+	<br/>
+	<table id="_tb" width="30%" border="5px">
+		<tr>
+			<td>Name</td>
+		</tr>		
+	</table>
+</body>
+</html>

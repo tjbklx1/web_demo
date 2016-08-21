@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+
+	function test1(){
+		var s = false;
+		alert(typeof s);
+		
+		s = 1;
+		alert(typeof s);
+		
+		s = 1.0;
+		alert(typeof s);
+		
+		s="abc";
+		alert(typeof s);
+		
+	}
+
+	
+	function add() {
+		return ;
+	}
+	//alert(add());
+
+
+	function test2(){
+
+		alert(typeof s); //undefinded
+
+		alert(undefined == null); //true
+
+		var s = Number(3);
+		alert(s);	//3
+
+		var s = Boolean("hello");
+		alert(s); //true
+
+		var s = new String("hello");
+		alert(typeof s);	//object
+
+		var s = new Boolean("hello");
+		alert(s);	//true
+
+		var s = new Array("hello","ss");
+		alert(s);	//hello ss
+	}
+
+	//test2();
+
+	function test3() {
+		var object = new Object();
+
+		for ( var v in object) {
+			alert(v);
+		}
+		alert(object.propertyIsEnumerable("prototype"));
+	}
+
+	//	test3();
+	
+	function test4() {
+		for ( var v in window) {
+			alert(v);
+		}
+	}
+
+	//test4();
+
+	
+	function test5() {
+		var object = new Object();
+		alert(object.username);
+
+		object["username"] = "shengsiyuan";
+		alert(object.username);
+
+		delete object.username; // username属性已经从object对象中删除
+		alert(object.username);
+	}
+
+	//test5();
+
+
+	function test6() {
+		// 在JavaScript中定义对象的最常见的方式
+		var object = {
+			username : "zhangsan",
+			password : 123
+		};
+
+		alert(object.username);
+		alert(object.password);
+	}
+
+	test6();
+</script>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ajax 的案例</title>
+<script type="text/javascript" src="tools.js"></script>
+</head>
+<body>
+  		<input type="button" onclick="loadData();" value="获取数据" />
+		<input type="button" onclick="_del();" value="删除"/>
+		<input type="button" onclick="_loadXML();" value="XML"/>
+		<input type="button" onclick="_loadXMLServlet();" value="XMLServlet"/>
+		<br>
+		<table border="1" id="_td" width="90%">
+		<colgroup>		
+   			<col width="10%">
+   			<col width="40%">
+   			<col width="50%">
+   		</colgroup>
+   		
+			<tr>
+				<th>
+  				删除<input type="checkbox"/>
+  				</th>
+				<td>ID</td><td>Name</td>
+			</tr>
+		</table>
+		<hr>
+		主页是json01.jsp<br>
+		获取数据是获取的json的字符串,---jsondata.jsp,loaddata.js<br>
+		删除是从页面上获取id并删除.----deleteData.js<br>
+		XML是从xml文件中获取数据,并加载.----user.xml,xml.js<br>
+		XMLServlet是从servlet中获取数据并加载.---loadXMLServlet.js,XMLServlet.java<br>
+</body>
+	<script type="text/javascript">
+	function _loadXML() {
+		var http = getHttp();
+		alert(http);
+		var url = "data/users.xml";
+
+		http.open("GET", url, true);
+		http.onreadystatechange = function() {
+			//	alert(http.status+"----"+http.statusText);
+
+			if (http.readyState == 4) {
+				if (http.status == 200) {
+					var xml = http.responseXML;
+					//alert(">>>:"+xml);  //object
+					var users = xml.getElementsByTagName("user");
+					var len = users.length;
+					alert(len);
+					for ( var i = 0; i < len; i++) {
+						var ur = users[i];
+						var id = ur.getAttribute("id");
+						var name = ur.getAttribute("name");
+
+						var row = _td.insertRow();
+
+						var cell = row.insertCell();
+						cell.innerHTML = "<input type='checkbox' value='" + id
+								+ "' name='chk'/>";
+
+						cell = row.insertCell();
+						cell.innerHTML = id;
+
+						cell = row.insertCell();
+						cell.innerHTML = name;
+					}
+
+				}
+			}
+		};
+		http.send(null);
+	}
+
+	function _loadXMLServlet() {
+		var http = getHttp();
+		alert(http);
+		var url = "/js_demo/XMLServlet";
+
+		http.open("GET", url, true);
+		http.onreadystatechange = function() {
+			//	alert(http.status+"----"+http.statusText);
+
+			if (http.readyState == 4) {
+				if (http.status == 200) {
+					var xml = http.responseXML;
+					//alert(">>>:"+xml);  //object
+					var users = xml.getElementsByTagName("user");
+					var len = users.length;
+					alert(len);
+					for ( var i = 0; i < len; i++) {
+						var ur = users[i];
+						var id = ur.getAttribute("id");
+						var name = ur.getAttribute("name");
+
+						var row = _td.insertRow();
+
+						var cell = row.insertCell();
+						cell.innerHTML = "<input type='checkbox' value='" + id
+								+ "' name='chk'/>";
+
+						cell = row.insertCell();
+						cell.innerHTML = id;
+
+						cell = row.insertCell();
+						cell.innerHTML = name;
+					}
+
+				}
+			}
+
+		}
+		http.send(null);
+
+	}
+
+	function loadData() {
+		http = getHttp();
+		var url = "data/jsondata2.jsp";
+		http.open("POST", url, true);
+		http.setRequestHeader("Content-type",
+				"application/x-www-form-urlencoded");
+		http.onreadystatechange = back;
+		http.send(null);
+	}
+
+	function back() {
+		if (http.readyState == 4) {
+			if (http.status == 200) {
+				var txt = http.responseText;
+				var json = eval('(' + txt + ')');
+				var len = json.length;
+
+				var row = null;
+				var cell = null;
+				for ( var i = 0; i < len; i++) {
+					var p = json[i];
+					row = _td.insertRow();
+
+					cell = row.insertCell();
+					cell.innerHTML = "<input type='checkbox' value='" + p.id
+							+ "' name='chk'/>";
+
+					cell = row.insertCell();
+					cell.innerHTML = p.id;
+
+					cell = row.insertCell();
+					cell.innerHTML = p.name;
+				}
+			}
+		}
+	}
+
+	function _del() {
+		var chks = document.getElementsByName("chk");
+		var len = chks.length;
+		var param = "";
+		//id=001&id=002
+		for ( var i = 0; i < len; i++) {
+			if (chks[i].checked == true) {
+				if (param == "") {
+					//处理单个选中的
+					param = "id=" + chks[i].value;
+				} else {
+					//处理多个选中的
+					param = param + "&id=" + chks[i].value;
+				}
+			}
+		}
+		//输出选中的元素id
+		alert(param);
+		if (param == "") {
+			alert("请你选择要删除的行!!");
+			return;
+		}
+
+		http = getHttp();
+		var url = "data/jsondata2.jsp";
+		http.open("POST", url, true);
+		http.setRequestHeader("Content-type",
+				"application/x-www-form-urlencoded");
+		http.onreadystatechange = function() {
+			if (http.readyState == 4) {
+				if (http.status == 200) {
+					var len = _td.rows.length;
+					for ( var i = len - 1; i > 0; i--) {
+						var chk = _td.rows[i].cells[0].children[0];
+						if (chk.checked == true) {
+							_td.deleteRow(i);
+						}
+					}
+				}
+			}
+		}
+		http.send(param);
+	}
+</script>
+</html>

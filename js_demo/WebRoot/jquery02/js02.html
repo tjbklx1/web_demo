@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../jquery-1.6.2.js"></script>
+<title>Insert title here</title>
+<style type="text/css">
+	cRed{
+		font-size: 10px;
+	}
+
+</style>
+</head>
+<script type="text/javascript">
+$(document).ready( function(){
+	
+	$("a").click(function(){
+		var text_tag =$(this).text();	//text=innertext //ie firefox
+		alert("标签 " + text_tag);
+	});
+
+	$("#iId").click(function(){
+		var text_tag =$(this).text();	//text=innertext //ie firefox
+		alert("ID " + text_tag);
+	});
+
+	$(".cRed").click( function(){
+		var text_tag =$(this).text();	//text=innertext //ie firefox
+		alert("类 " + text_tag);
+	});
+	
+});
+	
+</script>
+<body>
+	<a href="#">标签</a><br>
+	<a href="#" id =iId>ID</a><br>
+	<a href="#" class=cRed>class</a><br>
+</body>
+</html>

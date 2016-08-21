@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+
+	function Person() {
+		//在执行第一行代码前，js引擎会为我们生成一个对象
+		this.username = "zhangsan";
+		this.password = "123";
+
+		this.getInfo = function() {
+			alert(this.username + ", " + this.password);
+		}
+		//此处有一个隐藏的return语句，用于将之前生成的对象返回
+	}
+	function test1() {
+		var person = new Person();
+		person.getInfo();
+	}
+	//test1();
+
+
+	/**********************************************************/
+
+	function Person2(username, password) {
+		this.username = username;
+		this.password = password;
+
+		this.getInfo = function() {
+			alert(this.username + ", " + this.password);
+		}
+	}
+
+	function test2() {
+		alert("test2");
+		var person = new Person2("zhangsan", "123");
+		person.getInfo();
+
+	}
+	//test2();
+	
+</script>
+<body>
+
+</body>
+</html>

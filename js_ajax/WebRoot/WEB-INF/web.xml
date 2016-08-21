@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<servlet>
+		<servlet-name>MyServlet</servlet-name>
+		<servlet-class>cn.test.servlet.MyServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>XMLServlet</servlet-name>
+		<servlet-class>cn.test.servlet.XMLServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GsonServlet</servlet-name>
+		<servlet-class>cn.test.servlet.GsonServlet</servlet-class>
+	</servlet>
+
+
+
+	<servlet-mapping>
+		<servlet-name>MyServlet</servlet-name>
+		<url-pattern>/MyServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>XMLServlet</servlet-name>
+		<url-pattern>/XMLServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GsonServlet</servlet-name>
+		<url-pattern>/GsonServlet</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

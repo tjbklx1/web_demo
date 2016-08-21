@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+	//数组的四种创建方式
+	
+	//第一
+	//	var fruit = new Array(2); //数字没有约束力
+	var fruit = new Array();
+	fruit[0]="a";
+	fruit[1]="b";
+	fruit[2]="c";
+	fruit[3]="d";
+	fruit["e"]="e";
+
+	//第二
+	fruit = new Array(1,2,3,4);
+	
+	//第三
+    fruit = ["啊","呗","次","的"];
+
+	//第四
+	var fruit = new Array();
+	fruit.push("0"); 
+	fruit.push("1");
+	fruit.push("2");
+	fruit.push("3");
+	fruit.push("4");
+	
+    //遍历数组 for in
+	for(var i in fruit){
+		document.write("fruit."+i+" = "+fruit[i] +"<br>")
+	}
+
+
+	//二维数组
+	
+	var biarray =new Array();
+	biarray[0]=new Array(0,"a");
+	biarray[1]=new Array(1,"b");
+	biarray[2]=new Array(2,"c");
+	biarray[3]=new Array(3,"d");
+	biarray["e"]=new Array(3,"e"); //下面的遍历方式去不出来
+
+	
+	for(var i =0;i<biarray.length;i++){
+		for(var j =0;j<biarray[i].length;j++){
+			document.write(""+biarray[i][j]+"<br>");
+		}
+		document.write("<br>")
+	}
+
+	//数组的方法
+	with(document){
+		write("<ul>");
+		write("<li>"+fruit.join()+"</li>");
+		write("<li>"+fruit.join("-")+"</li>");
+		write("<li>"+fruit.toString()+"</li>");
+		write("<li>"+fruit.toLocaleString()+"</li>");
+		write("<li>"+fruit.reverse().join()+"</li>");
+		write("<li>"+fruit.valueOf()+"</li>");
+		write("<ul>");
+	}
+
+	//字符串的方法
+	var str1="abcdefg";
+	var str2 =1234;
+
+	document.write(str1.charAt(4)+"<br>");
+	document.write(str1.substring(2, 4)+"<br>");
+	document.write(str1.toUpperCase()+"<br>");
+	document.write(str1.indexOf("w")+"<br>");
+	document.write(str2.toString().charAt(3)+"<br>");
+	
+	</script>
+</body>
+</html>

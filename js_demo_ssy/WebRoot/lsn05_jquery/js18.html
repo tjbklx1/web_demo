@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../jquery-1.6.2.js"></script>
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	var addItems = function(){
+		document.getElementById("div1").innerHTML = "";
+		var value = parseInt(document.getElementById("itemsNumber").value);
+		for(var i=0;i<value;i++){
+			var input = document.createElement("input");
+			input.setAttribute("type","text");
+			var br = document.createElement("br");
+			document.getElementById("div1").appendChild(input);
+			document.getElementById("div1").appendChild(br);
+		}
+	}
+
+	var addItems2 = function(){
+		$("#div1").innerHTML = "";
+		var value = parseInt($("#itemsNumber").val());
+		var str="";
+		
+		for(var i=0;i<value;i++){
+			str += "<input type ='text'><br>";
+		}
+		$("#div1").append(str);
+	}
+</script>
+<body>
+
+	 <input type="text" id="itemsNumber"> 
+	 <input type="button" id="btn" value="click_js" onclick="addItems();">
+	 <input type="button" id="btn" value="click_jquery" onclick="addItems2();">
+	
+	<div id="div1"></div>
+
+</body>
+</html>

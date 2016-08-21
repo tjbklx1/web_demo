@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+		<title>Untitled Document</title>
+		<script type="text/javascript">
+			onload = function(){
+				var addButton = document.getElementById("addButton");		// 按钮
+				addButton.onclick = function(){
+					// 判断以前有没有, 如果有, 则删除
+					var tableArr = document.getElementsByTagName("table");
+					for(var x = 0; x < tableArr.length; x++)
+						document.body.removeChild(tableArr[x]);
+					
+					var addRows = document.getElementById("addRows").value;		// 行数
+					var addCols = document.getElementById("addCols").value;		// 列数
+					var table = document.createElement("table");	// 创建table, document.createElement("table");
+					var tbody = document.createElement("tbody");	// 创建tbody
+					for(var x = 0; x < addRows; x++){
+						var tr = document.createElement("tr");	// 创建tr
+						for(var y = 0; y < addCols; y++){
+							var td = document.createElement("td");		// 创建td
+							td.innerText = (x + 1) + ", " + (y + 1);	// 设置td中文本, innerText
+							tr.appendChild(td);		// 将td装入tr
+						}
+						tbody.appendChild(tr);	// 将tr装入tbody
+					}
+					table.appendChild(tbody);	// 将tbody装入table
+					document.body.appendChild(table);	// 将table装入body, document.body
+					table.setAttribute("border", "1");	// 设置table的属性, table.setAttribute("border", "1");
+					table.setAttribute("width", "60%");
+					table.setAttribute("align", "center");
+					table.setAttribute("cellpadding", "5");
+					table.setAttribute("cellspacing", "0");
+				}
+				
+				document.getElementById("delRowButton").onclick = function(){
+					// 获取要删除的行数
+					var delRows = document.getElementById("delRows").value;
+					// 获取tbody
+					var tbody = document.getElementsByTagName("tbody")[0];
+					// 获取tbody的第行数个子元素
+					var child = tbody.childNodes[delRows - 1];
+					// tbody删除该子元素, removeChild()
+					tbody.removeChild(child);
+				}
+				
+				document.getElementById("delColButton").onclick = function(){
+					// 获取要删除的列数
+					var delCols = document.getElementById("delCols").value;
+					// 获取所有tr
+					var trArr = document.getElementsByTagName("tr");
+					// 遍历所有tr, 在每个tr中删除第列数个子元素
+					for(var x = 0; x < trArr.length; x++){
+						var td = trArr[x].childNodes[delCols-1];	// 获取每一个tr中要删除的td
+						trArr[x].removeChild(td);
+					}
+				}
+				
+				document.getElementById("exchangeRow").onclick = function(){
+					var rowA = document.getElementById("rowA").value;	// 获取输入的行号
+					var rowB = document.getElementById("rowB").value;
+					
+					if(rowA == rowB)
+						return;
+						
+					var trArr = document.getElementsByTagName("tr");	// 获取到所有tr
+					
+					var trA = trArr[rowA - 1];	// 找到要交换的tr
+					var trB = trArr[rowB - 1];
+					
+					var tbody = document.getElementsByTagName("tbody")[0];
+					
+					var temp = trA.cloneNode(true);		// 克隆其中一个
+					tbody.insertBefore(temp, trB);		// 插入到另一个的前面
+					tbody.replaceChild(trB, trA);		// 用另一个替换被克隆的
+				}
+				
+				
+				document.getElementById("exchangeCol").onclick = function(){
+					var colA = document.getElementById("colA").value;	// 要交换的列
+					var colB = document.getElementById("colB").value;
+					if(colA == colB)
+						return;
+					
+					var trArr = document.getElementsByTagName("tr");	// 获取所有tr
+					for(var x = 0; x < trArr.length; x++){
+						var tdArr = trArr[x].childNodes;	// 每一个tr中的所有td
+						if(colA > tdArr.length || colB > tdArr.length || colA < 1 || colB < 1){		// 判断越界问题
+							alert("输入的行不存在");
+							return;
+						}
+							
+                        var tdA = tdArr[colA - 1]; 			// 要交换的td
+                        var tdB = tdArr[colB - 1];
+						
+						var temp = tdA.cloneNode(true);		// 克隆其中一个
+						trArr[x].insertBefore(temp, tdB);	// 将克隆的插入到另一个前面
+						trArr[x].replaceChild(tdB, tdA);	// 用另一个替换被克隆的
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		创建表格的行数: <input id="addRows"><br>
+		创建表格的列数: <input id="addCols"><br>
+		<input type="button" value="创建表格" id="addButton"><br>
+		<br>
+		删除表格的行数: <input id="delRows"><input type="button" value="删除行" id="delRowButton"><br>
+		删除表格的列数: <input id="delCols"><input type="button" value="删除列" id="delColButton"><br>
+		<br>
+		输入交换的行数: <input id="rowA" style="width:20px">, <input id="rowB" style="width:20px"> <input type="button" value="交换行" id="exchangeRow"><br>
+		输入交换的列数: <input id="colA" style="width:20px">, <input id="colB" style="width:20px"> <input type="button" value="交换列" id="exchangeCol"><br>
+		<br>
+	</body>
+</html>

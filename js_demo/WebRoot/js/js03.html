@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+
+	var a = new Array();
+	for ( var i = 0; i < 3; i++) {
+		a.push("push 方法 " + i);
+		alert("push : "+a[i]);
+	}
+	for ( var i = 0; i < 3; i++) {
+		var s = a.pop();
+		alert(i + " pop : " + s);
+	}
+	alert("length : " + a.length);
+</script>
+<body>
+pop+push<br>
+本例练习push往队列里放东西<br> 
+pop从队列里去东西,而且是后进先出,取完为止,数组长度变为0.
+
+</body>
+</html>

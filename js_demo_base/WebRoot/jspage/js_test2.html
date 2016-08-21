@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+		<title>Untitled Document</title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var sImg = document.getElementById("sImg");
+				var bImg = document.getElementById("bImg");
+				var div = document.getElementById("div");
+				sImg.onmousemove = function(){
+					bImg.style.marginLeft = 0 - (event.x - 8) * 2;	// event.x是鼠标x轴坐标, 减去8像素的body边框, 乘以2是因为下面比上面大一倍
+					bImg.style.marginTop = 0 - (event.y - 8) * 2;
+				}
+				sImg.onmouseenter = function(){
+					div.style.display = "block";
+				}
+				sImg.onmouseleave = function(){
+					div.style.display = "none";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<img src="../img_html/a.jpg" width="80" id="sImg"><br>
+		<div style="width:160px; height:160px; border:1px solid; margin-left:80px; overflow:hidden; display:none" id="div">
+			<img src="../img_html/a.jpg" id="bImg">
+		</div>
+	</body>
+</html>

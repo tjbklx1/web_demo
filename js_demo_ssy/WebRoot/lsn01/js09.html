@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+<!-- 
+		<script type="text/javascript">
+		function getEvent(event){
+	    	alert("事件类型： " + event.type);
+	    }
+	    document.write("单击...");
+	    document.onmousedown = getEvent;
+		</script>
+ -->
+
+		<input type="button" value="click" id="button1">
+
+	<script type="text/javascript">
+		var v = document.getElementById("button1");
+		v.onclick = clickHandler;
+		function clickHandler() {
+			alert("--");
+			alert(event.type);
+		}
+	</script>
+
+	</body>
+</html>

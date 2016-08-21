@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../jquery-1.6.2.js"></script>
+<title>Insert title here</title>
+<style>
+	img{
+		border:2px solid blue;
+		width:600px;							
+	}	
+	div{
+		width:200px;
+		height:200px;
+		border:2px solid red;			
+	}			
+  	.abc{
+  		background:red;
+  	}	
+</style>
+</head>
+<script type="text/javascript">
+	$(document).ready( function(){
+		
+		$("#div1").click(function(){
+			$(this).toggleClass("abc");
+		
+		});
+		
+		$("#btn1").click(function(){
+			$("#div1").toggleClass("abc");
+		
+		});
+		
+		$("#btn2").click(function(){
+			$("#div1").toggle(3000);
+			$("#div1").slideUp();
+		});
+		
+		$("#btn3").click(function(){
+			$("#div1").slideDown();
+		});
+		
+		
+		$("#btn5").click(function(){
+//			$("img").fadeOut(5000);	
+			$("img").slideUp(3000);	
+		});
+		$("#btn6").click(function(){
+//			$("img").fadeIn(2000);				
+			$("img").slideDown(3000);
+		});
+		  $("#btn7").click(function(){	 	  	  	  
+ 	  	      $("img").slideToggle(2000);
+ 	  	  });
+		
+/**		
+		$("#btn4").bind("click",function(){
+			$("#div1").toggle(3000);
+			
+			$(this).unbind("click");
+		});
+		$("#btn4").bind("click",function(){
+			alert("ssssssssss");
+		});
+**/		
+		$("#btn4").bind("click",function(){
+			$("#div1").toggle(3000);
+			//指定移除事件
+			//可以将方法单独出来,放在前边
+			$(this).unbind("click",_abc);
+		});
+		$("#btn4").bind("click",_abc=function(){
+			alert("ssssssssss");
+		});
+		
+		
+		
+	});
+
+</script>
+<body>
+		
+	<img src="../img/1.jpg">	
+	<br/>
+	<br/>
+	<div id="div1">
+		切换样式 本机ie没有实现 firefox实现了
+	</div>
+	<br/>
+	<br/>
+	
+	<button id="btn1">切换样式</button>
+	<button id="btn2">卷帘效果上</button>
+	<button id="btn3">卷帘效果下</button>
+	
+	<button id="btn4">bind</button>
+	
+	<button id="btn5">FadeOut 淡出</button>
+	<button id="btn6">FadeIn 淡入</button>
+	<button id="btn7">slideToggle</button>
+  	<br/>
+	<br/>
+	<br/>
+	<br/>
+</body>
+</html>

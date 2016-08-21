@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+			/*
+			var regex = /^[a-zA-Z]\w*$/;		// JS中的正则表达式, ^表示行开头, $表示结尾
+			var str = "abc";
+			alert(regex.test(str));		// 从str中查找是否包含能匹配regex的部分 
+			*/
+			
+			var usernameRegex = /^[a-zA-Z]\w*$/;
+			var passwordRegex = /^\w{6,16}$/;
+			var emailRegex = /^[a-zA-Z0-9_-]+@([a-zA-Z0-9_-]+\.)+[a-zA-Z]{2,3}$/;
+			var birthdayRegex = /^[12]\d{3}-(([1-9])|(0[1-9])|(1[012]))-(([1-9])|([12]\d)|(3[01])|(0[1-9]))$/;
+			
+			
+			
+			var str = "   a  b  c    ";
+			// alert("--" + str.replace(/^\s+/, "").replace(/\s+$/,"") + "--");
+			
+			function trim(s){
+				return str.replace(/^\s+|\s+$/g, "");	// global, 全局, 会匹配到所有的, 如果不加, 只匹配到一个
+			}
+			// alert("--"+trim("   a  b  c    ")+"--")
+			
+			var regex = /[abc]/i;	// i表示正则表达式忽略大小写
+			alert(regex.test("A"));
+			
+		</script>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../jquery-1.6.2.js"></script>
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+/**
+	$(document).ready( function(){
+		$("#table1 tbody tr:even").css("background","red");
+		$("#table1 tbody tr:odd").css("background","blue");
+	});
+**/
+
+	window.onload = function(){
+		var mytable = document.getElementById("table1");
+		var mytbody = document.getElementsByTagName("tbody")[0];
+		var mytrs = mytbody.getElementsByTagName("tr");
+
+		for(var i =0;i<mytrs.length ; i++){
+			if(i%2==0){ mytrs[i].style.backgroundColor ="red" };
+			else { mytrs[i].style.backgroundColor ="blue" };
+		}
+	}
+</script>
+<body>
+
+<table id="table1" border="1" align="center" width="80%">
+<tbody>
+
+  <tr><td>hello</td><td>hello</td><td>hello</td><td>hello</td></tr>
+  <tr><td>world</td><td>world</td><td>world</td><td>world</td></tr>
+  <tr><td>welcome</td><td>welcome</td><td>welcome</td><td>welcome</td></tr>
+  <tr><td>aaaaa</td><td>aaaaa</td><td>aaaaa</td><td>aaaaa</td></tr>
+  <tr><td>bbbbb</td><td>bbbbb</td><td>bbbbb</td><td>bbbbb</td></tr>
+  <tr><td>ccccc</td><td>ccccc</td><td>ccccc</td><td>ccccc</td></tr>
+  <tr><td>ddddd</td><td>ddddd</td><td>ddddd</td><td>ddddd</td></tr>
+  <tr><td>eeeee</td><td>eeeee</td><td>eeeee</td><td>eeeee</td></tr>
+  <tr><td>fffff</td><td>fffff</td><td>fffff</td><td>fffff</td></tr>
+  <tr><td>hello</td><td>hello</td><td>hello</td><td>hello</td></tr>
+  <tr><td>world</td><td>world</td><td>world</td><td>world</td></tr>
+  <tr><td>welcome</td><td>welcome</td><td>welcome</td><td>welcome</td></tr>
+  <tr><td>aaaaa</td><td>aaaaa</td><td>aaaaa</td><td>aaaaa</td></tr>
+  <tr><td>bbbbb</td><td>bbbbb</td><td>bbbbb</td><td>bbbbb</td></tr>
+  <tr><td>ccccc</td><td>ccccc</td><td>ccccc</td><td>ccccc</td></tr>
+  <tr><td>ddddd</td><td>ddddd</td><td>ddddd</td><td>ddddd</td></tr>
+  <tr><td>eeeee</td><td>eeeee</td><td>eeeee</td><td>eeeee</td></tr>
+  <tr><td>fffff</td><td>fffff</td><td>fffff</td><td>fffff</td></tr>
+  <tr><td>hello</td><td>hello</td><td>hello</td><td>hello</td></tr>
+  <tr><td>world</td><td>world</td><td>world</td><td>world</td></tr>
+  <tr><td>welcome</td><td>welcome</td><td>welcome</td><td>welcome</td></tr>
+  <tr><td>aaaaa</td><td>aaaaa</td><td>aaaaa</td><td>aaaaa</td></tr>
+  <tr><td>bbbbb</td><td>bbbbb</td><td>bbbbb</td><td>bbbbb</td></tr>
+  <tr><td>ccccc</td><td>ccccc</td><td>ccccc</td><td>ccccc</td></tr>
+  <tr><td>ddddd</td><td>ddddd</td><td>ddddd</td><td>ddddd</td></tr>
+  <tr><td>eeeee</td><td>eeeee</td><td>eeeee</td><td>eeeee</td></tr>
+  <tr><td>fffff</td><td>fffff</td><td>fffff</td><td>fffff</td></tr>
+
+</tbody>
+</table>
+
+</body>
+</html>

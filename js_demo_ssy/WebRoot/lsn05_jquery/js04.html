@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../jquery-1.6.2.js"></script>
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	$(document).ready( function(){
+		
+		alert("jquery : "+$("#hello").css("color"));
+
+		alert($("#hello")[0]);
+		alert($("#hello").get(0));
+
+		alert("a标签 length :"+$("a").length);
+
+	});
+	window.onload = function(){
+		alert("javascript : "+document.getElementById("hello").style.color);
+	}
+</script>
+<body>
+		<a id="hello" style="color:blue">click me</a><br>
+		<a class="test" href="http://www.google.com"><b>google</b></a><br>
+		<a class="test" href="http://www.yahoo.com">yahoo</a><br>
+</body>
+</html>

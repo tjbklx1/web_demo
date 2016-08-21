@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../jquery-1.6.2.js"></script>
+<title>Insert title here</title>
+<style>
+	div{
+		border:1px solid red;
+		width:100px;
+		height:100px;
+		float:left;
+		margin:3px;
+	}
+</style>
+</head>
+<script type="text/javascript">
+	$(document).ready( function(){
+		$("#btn1").click(function(){
+		/*
+			var newDiv =$('<div>新的DIV</div>');
+			newDiv.insertAfter("#a");
+			newDiv.insertBefore("#a");	
+			$("#a").after(newDiv);
+			$("#a").before(newDiv);
+	
+			$("#a").before(function(){
+				return newDiv;
+			});
+		*/
+			$("#a").before(function(){
+				var newDiv =$('<div>新的DIV</div>');
+				return newDiv;
+			});
+		});
+		
+		$("#btn2").click(function(){
+			$("#b").insertBefore("#a");
+		});
+		
+		$("#btn3").click(function(){
+			var xy =$("#b").clone();			
+			xy.insertBefore("#a");
+		});
+	});
+
+</script>
+<body>
+
+	<button id="btn1">insertAfter,insertBefore,after,before的测试</button><br>
+	<button id="btn2">把b放到a前面</button><br>
+	<button id="btn3">克隆一个b并放到a前面</button><br>
+	<hr/>
+	<div id="a">SourceA</div>
+ 	<div id="b">SourceB</div>	
+ 	
+ 	
+</body>
+</html>

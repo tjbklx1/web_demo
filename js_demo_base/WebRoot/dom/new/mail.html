@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+		<title>Untitled Document</title>
+		<script type="text/javascript">
+			var trArr = null;
+			onload = function(){
+				trArr = document.getElementsByTagName("tr");
+				trArr[0].bgColor = "#777777";	// 通过属性设置
+				trArr[trArr.length - 1].style.backgroundColor = "#777777";	// 通过style样式设置
+				
+				setTrColor();
+				
+				for(var x = 1; x < trArr.length - 1; x++){
+					trArr[x].onmouseenter = function(){		// 当鼠标进入时, 变为白色
+						this.bgColor = "#ffffff";
+					}
+					trArr[x].onmouseleave = setTrColor;		// 当鼠标移出时, 重置颜色
+				}
+			}
+			
+            function setTrColor(){
+                for (var x = 1; x < trArr.length - 1; x++) { // 遍历数组, 除了第一个和最后一个
+                    if (x % 2 == 0) 
+                        trArr[x].bgColor = "#bbbbbb"; // 奇数行设置成一种颜色
+                    else 
+                        trArr[x].bgColor = "#dddddd"; // 偶数行设置成另一种颜色
+                }
+            }
+			
+			function changeAll(){
+				var inputArr = document.getElementsByTagName("input"); 		// 获取所有input
+				for(var x = 1; x < inputArr.length - 4; x++)		// 遍历其中除了第一个和后四个的部分, 就是所有的checkbox
+					inputArr[x].checked = inputArr[0].checked;		// 设置每一个的checked属性(是否被选中)都等于第一个的checked属性
+			}
+			
+			function selectAll(){	// 遍历除了第一个和最后四个input, 将其中所有checkbox的checked属性设置为true
+				var inputArr = document.getElementsByTagName("input");
+				for(var x = 1; x < inputArr.length - 4; x++)
+					inputArr[x].checked = true;
+			}
+			
+			function reverse(){		// 将所有checked属性取反
+				var inputArr = document.getElementsByTagName("input");
+				for(var x = 1; x < inputArr.length - 4; x++)
+					inputArr[x].checked = !inputArr[x].checked;
+			}
+			
+			function cancel(){		// 将所有checked属性设置为false
+				var inputArr = document.getElementsByTagName("input");
+				for(var x = 1; x < inputArr.length - 4; x++)
+					inputArr[x].checked = false;
+			}
+			
+			function del(){			// 遍历所有checkbox, 判断哪个被选中了, 删除当前tr
+				var tbody = document.getElementsByTagName("tbody")[0];
+				var inputArr = document.getElementsByTagName("input");
+				for(var x = 1; x < inputArr.length - 4; x++)
+					if(inputArr[x].checked)
+						tbody.removeChild(inputArr[x--].parentNode.parentNode);
+				setTrColor();
+			}
+			
+			var times = 0; 
+			
+			function sortByName(){
+				times++;
+				var tbody = document.getElementsByTagName("tbody")[0];
+				for(var i = 1; i < trArr.length - 2; i++)
+					for(var j = i+1; j > 1 && compare(trArr[j].childNodes[3].innerText, trArr[j-1].childNodes[3].innerText); j--){
+						var trA = trArr[j];
+						var trB = trArr[j-1];
+						var temp = trA.cloneNode(true);		// 克隆trA, 不包含事件处理
+						tbody.insertBefore(temp, trB);		// 用克隆的(没有事件处理的)替换trB
+						tbody.replaceChild(trB, trA);		// 用trB替换trA(有事件处理的)
+						tbody.replaceChild(trA, temp);		// 用trA(有事件)替换克隆的(没事件)
+					}
+			}
+			
+			function compare(s1, s2){
+				var arr1 = s1.split("-");	// arr1[0]是s1中的年, 1是月, 2是日
+				var arr2 = s2.split("-");
+				var date1 = new Date(arr1[0],arr1[1],arr1[2]);	// s1对应的Date对象
+				var date2 = new Date(arr2[0],arr2[1],arr2[2]);	// s2对应的Date对象
+				return times % 2 == 1 ? date1.getTime() < date2.getTime() : date1.getTime() > date2.getTime();		// 比较两个时间的毫秒数
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<table width="70%" border="1" cellpadding="3" cellspacing="0" >
+				<tr>
+	                <th width="10%"><input type="checkbox" onclick="changeAll();"></th>
+	                <th>标题</th>
+	                <th>发件人</th>
+	                <th><a href="javascript:sortByName()">时间</a></th>
+	            </tr>
+				<tr>
+	                <td><input type="checkbox"></td>
+	                <td>Title1</td>
+	                <td>张三</td>
+	                <td>2010-6-1</td>
+	            </tr>
+	            <tr>
+	                <td><input type="checkbox"></td>
+	                <td>Title2</td>
+	                <td>李四</td>
+	                <td>2010-5-5</td>
+	            </tr>
+	            <tr>
+	                <td><input type="checkbox"></td>
+	                <td>Title3</td>
+	                <td>王五</td>
+	                <td>2010-3-1</td>
+	            </tr>
+	            <tr>
+	                <td><input type="checkbox"></td>
+	                <td>Title4</td>
+	                <td>赵六</td>
+	                <td>2010-1-15</td>
+	            </tr>
+	            <tr>
+	                <td><input type="checkbox"></td>
+	                <td>Title5</td>
+	                <td>钱七</td>
+	                <td>2010-1-2</td>
+	            </tr>
+				<tr>
+	            	<th colspan="4">
+	            		<input type="button" value="全选" onclick="selectAll()">
+						<input type="button" value="反选" onclick="reverse()">
+	            		<input type="button" value="取消" onclick="cancel()">
+						<input type="button" value="删除" onclick="del()">
+					</th>
+	            </tr>
+			</table>
+		<center>
+	</body>
+</html>

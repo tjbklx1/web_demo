@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../jquery-1.6.2.js"></script>
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	window.onload = function(){
+		var mylinks = document.getElementsByTagName("a");
+		for(var i=0;i<mylinks.length;i++){
+			//给每一个超链接对象附加onclick属性
+			mylinks[i].onclick = function(){
+				alert("jvascript : hello world");
+			}
+		}
+	}
+	
+	$(document).ready( function(){
+		$("a").click(function(){
+			alert("jquery : hello world !");
+		});
+	});
+
+</script>
+<body>
+
+	<a href="#">test1</a><br>
+	<a href="#">test2</a><br>
+	<a href="#">test3</a><br>
+	<a href="#">test4</a><br>
+	<a href="#">test5</a><br>
+	<a href="#">test6</a><br>
+ 
+</body>
+</html>

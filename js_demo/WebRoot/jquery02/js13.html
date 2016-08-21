@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../jquery-1.6.2.js"></script>
+<title>Insert title here</title>
+<style>
+	img{
+		border:2px solid blue;
+		width:600px;							
+	}					
+</style>
+</head>
+<script type="text/javascript">
+	$(document).ready( function(){
+		var a =new Array();
+		a.push("../img/1.jpg");
+		a.push("../img/2.jpg");
+		a.push("../img/3.jpg");
+		a.push("../img/4.jpg");
+		a.push("../img/5.jpg");
+		a.push("../img/6.jpg");
+		a.push("../img/7.jpg");
+		a.push("../img/8.jpg");		
+		/*
+		$("img").click(function(){
+			var img = a.pop();
+			var old = $(this).attr("src");
+//			a.push(old);
+			$(this).attr("src",img);
+		});
+		*/
+		var idx = 0;
+		$("#a").click(function(){
+			idx++;
+			if(idx>a.length-1){
+				idx=0;
+			}
+			chgimg();
+		});
+		$("#b").click(function(){
+			idx--;
+			if(idx < 0){
+				idx=a.length - 1;
+			}
+			chgimg();
+		});
+		
+		function chgimg(){
+			$("img").attr("src",a[idx]);
+		}
+		
+		
+	});
+
+</script>
+<body>
+	<img src="../img/1.jpg" usemap="#aaa">
+	<MAP NAME="aaa">
+	<!-- 
+	<AREA SHAPE="rect" id="a" style="cursor:hand;" onclick="alert('上一张');"  COORDS="0,0,300,300"/>
+    <AREA SHAPE="rect" id="b" style="cursor:hand;" onclick="alert('下一张');"  COORDS="300,0,600,300"/>
+  	-->     
+    <AREA SHAPE="rect" id="a" style="cursor:hand;"  COORDS="0,0,300,300"/>
+    <AREA SHAPE="rect" id="b" style="cursor:hand;"  COORDS="300,0,600,300"/>
+  	</MAP>
+ 		
+ 	
+ 	<br>
+ 	<br>
+ 	<br>
+ 	<br>
+  	<button id="btn2" style="cursor:url('../img/c.ico');">DDD</button> 
+</body>
+</html>

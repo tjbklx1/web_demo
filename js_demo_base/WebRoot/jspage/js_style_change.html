@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<style type="text/css">
+	input{
+		width:150px
+	}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var red=document.getElementById("red");
+		var green=document.getElementById("green");
+		var blue=document.getElementById("blue");
+		
+		var defaultColor ="white";
+		function enter(){
+			document.body.style.backgroundColor=this.style.backgroundColor;
+		}
+		function leave(){
+			document.body.style.backgroundColor=defaultColor;
+		}
+		function click(){
+			defaultColor=this.style.backgroundColor;
+		}
+		red.onmouseenter = enter;	// 鼠标进入red按钮时, 执行enter方法.
+		green.onmouseenter = enter;
+		blue.onmouseenter = enter;
+				
+		red.onmouseleave = leave;
+		green.onmouseleave = leave;
+		blue.onmouseleave = leave;
+				
+		red.onclick = click;
+		green.onclick = click;
+		blue.onclick = click;		
+	}
+</script>
+<body>
+<center>
+	<input type="button" value=" red " id="red" style="background-color:red;">
+	<input type="button" value=" green " id="green" style="background-color:green;">
+	<input type="button" value=" blue " id="blue" style="background-color:blue;">
+</center>
+</body>
+</html>

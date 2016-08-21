@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+		<title>Untitled Document</title>
+		<script type="text/javascript">
+			onload = function(){
+				var inputArr = document.getElementsByTagName("input");
+				inputArr[inputArr.length-1].onclick = function(){
+					for(var x = 0; x < inputArr.length - 1; x++){
+						inputArr[x].checked = inputArr[inputArr.length-1].checked;
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="checkbox">苹果<br>
+		<input type="checkbox">桔子<br>
+		<input type="checkbox">香蕉<br>
+		<input type="checkbox">葡萄<br>
+		<input type="checkbox">桃子<br>
+		<input type="checkbox">全选<br>
+	</body>
+</html>

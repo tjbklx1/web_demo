@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+		<title>Untitled Document</title>
+	<!--	<script type="text/javascript" src="../js/check.js"></script>	-->
+		<script type="text/javascript" src="check.js"></script>
+	</head>
+	<body>
+		<fieldset>
+			<legend>ע�����û�</legend>
+			<form action="success.html" method="post" id="form">
+			<table border="1" width="60%" cellpadding="5" cellspacing="0" align="center">
+				<tr>
+					<td width="20%">�û���:</td>
+					<td>
+						<input type="text" name="username" id="username"> <span id="usernameSpan"></span>
+					</td>
+				</tr>
+				<tr>
+					<td>����:</td>
+					<td>
+						<input type="password" name="password" id="password"> <span id="passwordSpan"></span>
+					</td>
+				</tr>
+				<tr>
+					<td>ȷ������:</td>
+					<td>
+						<input type="password" name="confirm" id="confirm"> <span id="confirmSpan"></span>
+					</td>
+				</tr>
+				<tr>
+					<td>����:</td>
+					<td>
+						<input type="text" name="email" id="email"> <span id="emailSpan"></span>
+					</td>
+				</tr>
+				<tr>
+					<td>����:</td>
+					<td>
+						<input type="text" name="birthday" id="birthday"> <span id="birthdaySpan"></span>
+					</td>
+				</tr>
+				<tr>
+					<td>�Ա�:</td>
+					<td>
+						<input type="radio" name="gender" value="male">��
+						<input type="radio" name="gender" value="female">Ů
+						<span id="genderSpan"></span>
+					</td>
+				</tr>
+				<tr>
+					<td>��Ȥ:</td>
+					<td>
+						<input type="checkbox" name="interest" value="java">Java
+						<input type="checkbox" name="interest" value="html">HTML
+						<input type="checkbox" name="interest" value="js">JavaScript 
+						<span id="interestSpan"></span>
+					</td>
+				</tr>
+				<tr>
+					<td>����:</td>
+					<td>
+						<select name="city" id="city">
+							<option value="">-��ѡ�����-</option>
+							<option value="bj">����</option>
+							<option value="cd">�ɶ�</option>
+							<option value="gz">����</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" value="ע�����û�" style="width:200px">
+					</td>
+				</tr>
+			</table>
+			</form>
+		</fieldset>
+	</body>
+</html>

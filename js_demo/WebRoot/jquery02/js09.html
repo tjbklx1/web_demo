@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../jquery-1.6.2.js"></script>
+<title>Insert title here</title>
+<style>
+	div{
+		border:1px solid red;
+		width:100px;
+		height:100px;
+		float:left;
+		margin:3px;
+	}
+</style>
+</head>
+<script type="text/javascript">
+	$(document).ready( function(){
+		var i=1;
+		$("div").click( function(){
+			//只克隆元素
+			var divClone= $(this).clone(); 
+			//true 带上事件
+	//		var divClone=$(this).clone(true);	
+				
+			divClone.html(divClone.html()+"<br>"+i);
+	//		divClone.insertBefore("#c");			//在c元素前添加
+			divClone.insertBefore("div:first");	//在第一个div前添加
+			i++;
+		});
+		
+	});
+</script>
+<body>
+
+	<div id="c">单击div事件的测试SourceA</div>
+ 	<div id="d">单击div事件的测试SourceB</div>	
+ 	
+</body>
+</html>

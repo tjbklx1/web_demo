@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Date</title>
+</head>
+<script type="text/javascript">
+	window.onload = function(){
+		function showTime(){
+			var timeDiv = document.getElementById("time");
+			var dateObj = new Date();
+			var year = dateObj.getYear();
+			var month = dateObj.getMonth() + 1;
+			var date = dateObj.getDate();
+			var hour = dateObj.getHours();
+			var minute = dateObj.getMinutes();
+			var second = dateObj.getSeconds();
+	        timeDiv.innerText = "当前时间: " + year + "年" + month + "月" + date + "日 " + hour + "时" + minute + "分" + second + "秒";
+		}
+		showTime();
+		setInterval(showTime, 1000);	// 每个1000毫秒执行1次showTime()方法
+				
+		function showGraduation(){
+			var gDate = new Date(2011, 5, 1, 17);		// 毕业时间
+			var cDate = new Date();		// 当前时间
+			var msGap = gDate.getTime() - cDate.getTime();	// 毕业事件和当前时间的毫秒差值
+					
+			var day = Math.floor(msGap / (1000 * 60 * 60 * 24));	// 差多少天
+			msGap %=  1000 * 60 * 60 * 24;		// 获取不足一天的毫秒值
+			var hour =  Math.floor(msGap / (1000 * 60 * 60));	// 差多少小时
+			msGap %=  1000 * 60 * 60;	// 获取不足一小时的毫秒值
+			var minute = Math.floor(msGap / (1000 * 60));	// 差多少分钟
+			msGap %=  1000 * 60;	// 获取不足一分钟的毫秒值
+			var second = Math.floor(msGap / 1000);	// 差多少秒
+					
+			var graduationDiv = document.getElementById("graduation");
+            graduationDiv.innerText = "距离基础班毕业还有: " + day + "天" + hour + "小时" + minute + "分钟" + second + "秒";
+		}
+		showGraduation();
+		setInterval(showGraduation, 1000);
+	}
+</script>
+<body>
+	<div id="time"></div><br>
+	<div id="graduation"></div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+		<title>Untitled Document</title>
+		<script type="text/javascript">
+			onload = function(){
+				var ad = document.images[0];	// 获取document页面中所有的图片
+				var x = 0;	// x轴坐标
+				var y = 0;	// y轴坐标
+				var xStep = 3;	// x轴每次移动多少
+				var yStep = 3;	// y轴每次移动多少
+				var width = document.documentElement.clientWidth;		// 浏览器可见区域大小
+				var height = document.documentElement.clientHeight;
+				
+				var id = setInterval(moveAd, 10);
+				
+				ad.onmouseenter = function(){
+					clearInterval(id);		// 鼠标进入时停止
+				}
+				
+				ad.onmouseleave = function(){
+					id = setInterval(moveAd, 10);	// 鼠标移出时继续
+				}
+				
+				ad.onclick = function(){
+					document.body.removeChild(ad);	// 点击图片时删除图片
+					open("ad.png", null, "location=no,width=300,height=200");	// 打开新窗体
+				}
+				
+				window.onresize = function(){
+					width = document.documentElement.clientWidth;		// 窗体改变大小的时候, 重新获取高度和宽度
+					height = document.documentElement.clientHeight;
+					if(x + ad.width > width)	
+						x = width - ad.width;	// 如果改变窗体大小时, 图片在窗体外面, 那么将图片设置到窗体内部位置
+					if(y + ad.height > height)
+						y = height - ad.height;
+                    if (x < 0) 
+                        x = 0;
+                    if (y < 0) 
+                        y = 0;
+				}
+				
+				function moveAd(){
+					x += xStep;		// 每次执行时将x和y改变
+					y += yStep;
+					if(x + ad.width > width || x < 0)	// 判断超出边界后, 移动的方向反转
+						xStep *= -1;	
+					if(y + ad.height > height || y < 0)
+						yStep *= -1;
+					ad.style.left = x;	// 改变图片的位置
+					ad.style.top = y;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<img src="ad.png" style="position:absolute; left:0px; top:0px; border:0px">
+	</body>
+</html>

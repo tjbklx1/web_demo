@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+		<title>Untitled Document</title>
+		<script type="text/javascript">
+			onload = function(){
+				var yearObj = document.getElementById("year");
+				var monthObj = document.getElementById("month");
+				var dateObj = document.getElementById("date");
+				
+				var currentYear = new Date().getYear();		// 创建当前时间的Date对象, 获取年字段
+				for(var x = currentYear; x > currentYear - 150; x--){	// 从当前年开始, 到150年以前
+					var option = document.createElement("option");
+					option.innerText = x;
+					option.value = x;
+					yearObj.appendChild(option);
+				}
+				
+				// 生成月份的option, 一共12个.
+				for(var x = 1; x <= 12; x++){
+					var option = document.createElement("option");
+					option.innerText = x;
+					option.value = x;
+					monthObj.appendChild(option);
+				}
+				
+				function generateDate(){
+					// 清除dateObj中原有的option
+					var optionArr = dateObj.options;	// 获取select中的所有option, 不包含其他子元素
+					for(var x = 1; x < optionArr.length;)
+						dateObj.removeChild(optionArr[x]);
+					
+					var year = yearObj.value;
+					var month = monthObj.value;
+					if(year != "" && month !=""){
+                        if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+                        	// 创建31个option, 添加到dateObj中
+							for(var x = 1; x <= 31; x++){
+								var option = document.createElement("option");
+								option.innerText = x;
+								option.value = x;
+								dateObj.appendChild(option);
+							}
+                        }else if(month == 2){
+							var date = new Date(year, 2, 1);		// 创建Date对象, 指向选定的年的3月1日0:0:0:0000
+							date = new Date(date.getTime() - 1);	// 将Date对象减少1毫秒, 就到了2月最后1天的23:59:59:999
+							var days = date.getDate();				// 获取2月最后1天的日期, 就得到了要创建多少个option
+							// 创建days个option, 添加到dateObj中
+							for(var x = 1; x <= days; x++){
+								var option = document.createElement("option");
+								option.innerText = x;
+								option.value = x;
+								dateObj.appendChild(option);
+							}
+						}else{
+							// 创建30个option, 添加到dateObj中
+							for(var x = 1; x <= 30; x++){
+								var option = document.createElement("option");
+								option.innerText = x;
+								option.value = x;
+								dateObj.appendChild(option);
+							}
+						}
+					}
+				}
+				
+				yearObj.onchange = generateDate;
+				monthObj.onchange = generateDate;
+			}
+		</script>
+	</head>
+	<body>
+		<select id="year"><option value="">-请选择年份-</option></select>
+		<select id="month"><option value="">-请选择月份-</option></select>
+		<select id="date"><option value="">-请选择日期-</option></select>
+	</body>
+</html>

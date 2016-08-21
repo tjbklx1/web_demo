@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+
+	function Person(name, age) {
+		
+		//声明成员变量 ,this,必须加上。否则就不是成员变量
+		this.name = name;
+		this.age = age;
+		
+		//加入成员方法
+		this.getName = function() {
+			return "我叫:" + this.name;
+		}
+		
+		this.sayHello = function() {
+			alert("hello ");
+		}
+	}
+	//初始化此类
+	// Open Close 		开闭原则。－－开是指：对扩展开放，闭：对修改关闭。
+	var p = new Person("Tom",99);
+	alert(p.getName());
+	p.sayHello();
+
+	//对已经存在的类进行扩展
+	//通过获取它的原型的方式来扩展,prototype
+	Person.prototype.getAge = function() {
+		return "我的年龄：" + this.age;
+	};
+
+	var p = new Person("Tom", 99);
+	alert(p.getAge());
+</script>
+<body>
+
+</body>
+</html>

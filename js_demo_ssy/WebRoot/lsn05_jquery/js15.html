@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../jquery-1.6.2.js"></script>
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	$(document).ready( function(){
+		alert("#form1 :text  "+$('#form1 :text').length);
+	    alert("form1 :password  "+$('#form1 :password').length);
+	    alert("#form1 :radio  "+$('#form1 :radio').length);
+		alert("#form1 :checkbox  "+$('#form1 :checkbox').length);
+		alert("#form1 :submit  "+$('#form1 :submit').length);
+		alert("#form1 :input  "+$('#form1 :input').length);
+		alert("#form1 input  "+$('#form1 input').length);
+
+
+
+
+	});
+</script>
+<body>
+  <form id="form1" action="#">
+    <input type="button" value="Button"/><br/>
+    <input type="checkbox" name="c"/>1<input type="checkbox" name="c"/>2<input type="checkbox" name="c"/>3<br/>
+    <input type="file" /><br/>
+    <input type="hidden" /><div style="display:none">test</div><br/>
+    <input type="password" /><br/>
+    <input type="radio" name="a"/>1<input type="radio" name="a"/>2<br/>
+    <input type="reset" /><br/>
+    <input type="submit" value="提交"/><br/>
+    <input type="text" /><br/>
+    <select><option>Option</option></select><br/>
+    <textarea rows="5" cols="20"></textarea><br/>
+    <button>Button</button><br/>
+  </form>
+ 
+  <div></div>
+</body>
+</html>

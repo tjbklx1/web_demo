@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ajax 的案例</title>
+<script type="text/javascript" src="tools.js"></script>
+</head>
+<body>
+  	<input type="button" onclick="loadData();" value="获取数据" />
+	<br>
+	<table border="1" id="_td" width="90%">
+		<tr>
+			<td>ID</td><td>Name</td>
+		</tr>
+	</table>	
+</body>  
+  <script type="text/javascript">
+  	var http = null;
+	function loadData() {
+		http = getHttp();
+		var url = "data/jsondata.jsp";
+		http.open("POST", url, true);
+		http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		http.onreadystatechange = back;
+		http.send(null);
+	};
+
+	function back() {
+		if (http.readyState == 4) {
+			if (http.status == 200) {
+				var txt = http.responseText;
+				var json = eval('(' + txt + ')');
+				var len = json.length;
+	
+				var row = null;
+				var cell = null;
+				for ( var i = 0; i < len; i++) {
+					var p =json[i];				
+					row = _td.insertRow();
+					
+					cell=row.insertCell();
+					cell.innerHTML=p.id;
+					
+					cell=row.insertCell();
+					cell.innerHTML=p.name;
+				}
+			}
+		}
+	};
+  </script>
+</html>

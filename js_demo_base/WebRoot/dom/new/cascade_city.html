@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+		<title>Untitled Document</title>
+		<script type="text/javascript">
+			onload = function(){
+				var provinceObj = document.getElementById("province");
+				var cityObj = document.getElementById("city");
+				
+				var provinceArr = ["北京","天津","山东","河南","河北"];
+				for(var x = 0; x < provinceArr.length; x++){
+					var option = document.createElement("option");
+					option.innerText = provinceArr[x];
+					option.value = provinceArr[x];
+					provinceObj.appendChild(option);
+				}
+				
+				var cityArr = new Array();		// 二维数组
+				cityArr["北京"] = ["东城","西城","崇文","宣武","朝阳","丰台","石景山","海淀","门头沟","房山","通州","顺义","昌平","大兴","平谷","怀柔","密云","延庆"];
+				cityArr["天津"] = ["和平","河东","河西","南开","河北","红桥","塘沽","汉沽","大港","东丽","西青","津南","北辰","宁河","武清","静海","宝坻","蓟县"];
+				cityArr["山东"] = ["济南","青岛","淄博","枣庄","东营","烟台","潍坊","济宁","泰安","威海","日照","莱芜","临沂","德州","聊城","滨州","菏泽"];
+				cityArr["河南"] = ["郑州","开封","洛阳","平顶山","安阳","鹤壁","新乡","焦作","濮阳","许昌","漯河","三门峡","南阳","商丘","信阳","周口","驻马店","济源"];
+				cityArr["河北"] = ["石家庄","唐山","秦皇岛","邯郸","邢台","保定","张家口","承德","沧州","廊坊","衡水"];
+				
+				provinceObj.onchange = function(){
+					var optionArr = cityObj.childNodes;
+					for(var x = 1; x < optionArr.length; x++)
+						cityObj.removeChild(optionArr[x--]);
+					var arr = cityArr[provinceObj.value];	// 根据选择的省份, 确定需要哪一个小数组
+					for(var x = 0; x < arr.length; x++){
+						var option = document.createElement("option");
+						option.innerText = arr[x];
+						option.value = arr[x];
+						cityObj.appendChild(option);
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<select id="province"><option value="">-请选择省份-</option></select>
+		<select id="city"><option value="">-请选择城市-</option></select>
+	</body>
+</html>

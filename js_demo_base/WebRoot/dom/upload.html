@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>上传文件</title>
+</head>
+<script type="text/javascript">
+	window.onload =function(){
+		var addButton = document.getElementById("addButton");
+		var div = document.getElementsByTagName("div")[0];
+		
+		div.lastChild.onclick=del;
+		
+		function del(){
+			this.parentNode.parentNode.removeChild(this.parentNode);
+		}
+		
+		addButton.onclick = function(){
+			var cloneDiv =div.cloneNode(true);
+			var fieldset =addButton.parentNode;
+			fieldset.insertBefore(cloneDiv,addButton);
+			cloneDiv.lastChild.onclick =del;
+		}
+	}
+</script>
+<body>
+	<center>
+		<fieldset>
+			<legend>上传文件</legend>		
+			<div><input type="file"><a href="javascript:"><img src="img/false.gif" width="12" style="border:0px"></a></div>
+			<input type="button" value="添加新附件" id="addButton">
+		</fieldset>
+	</center>
+</body>
+</html>

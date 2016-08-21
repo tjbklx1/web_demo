@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>表格排序</title>
+</head>
+<script type="text/javascript">
+	var ageTimes = 0;
+	var nameTimes = 0;
+	var emailTimes = 0;
+	
+	function sortByAge(){	// 根据每个tr中第二个td的内容, 对tr排序
+		sort(1, ageTimes++);
+	}
+	
+	function sortByName(){
+		sort(0, nameTimes++);
+	}
+	
+	function sortByEmail(){
+		sort(2, emailTimes++);
+	}
+	
+	function sort(index, times){
+		var trArr = document.getElementsByTagName("tr");
+		for (var i = 1; i < trArr.length - 1; i++) {
+			for (var j = i + 1
+				; j > 1 
+				&& (times % 2 == 0 
+				? trArr[j].childNodes[index].innerText < trArr[j - 1].childNodes[index].innerText 
+				: trArr[j].childNodes[index].innerText > trArr[j - 1].childNodes[index].innerText)
+				; j--) {
+				var trA = trArr[j];
+				var trB = trArr[j - 1];
+				var tbody = document.getElementsByTagName("tbody")[0];
+				var temp = trA.cloneNode(true); // 先克隆
+				tbody.insertBefore(temp, trB); // 把克隆的插入到另一个的前面
+				tbody.replaceChild(trB, trA); // 用另一个替换被克隆的
+			}
+		}
+	}
+</script>
+<body>
+	<table width="60%" border="1" align="center" cellpadding="5" cellspacing="0">
+		<tr>
+			<th><a href="javascript:sortByName()">姓名</a></th>
+			<th><a href="javascript:sortByAge()">年龄</a></th>
+			<th><a href="javascript:sortByEmail()">邮箱</a></th>
+		</tr>
+		<tr>
+			<td>邱家恒</td>
+			<td>28</td>
+			<td>qjh@gmail.com</td>
+		</tr>
+		<tr>
+			<td>张金</td>
+			<td>23</td>
+			<td>zj@hotmail.com</td>
+		</tr>
+		<tr>
+			<td>陈崇</td>
+			<td>23</td>
+			<td>cc@qq.com</td>
+		</tr>
+		<tr>
+			<td>王鑫</td>
+			<td>22</td>
+			<td>wx@foxmail.com</td>
+		</tr>
+		<tr>
+			<td>张磊</td>
+			<td>25</td>
+			<td>zl@qq.com</td>
+		</tr>
+	</table>
+</body>
+</html>

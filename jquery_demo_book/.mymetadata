@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="jquery_demo_book"
+  id="myeclipse.1327889819125"
+  context-root="/jquery_demo_book"
+  j2ee-spec="5.0"
+  archive="jquery_demo_book.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+

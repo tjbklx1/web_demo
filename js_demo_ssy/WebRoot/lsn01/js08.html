@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+	function checkPassword(object){
+		if(object.value.length <=4){
+			alert("密码长度过短");
+			object.focus();
+			object.select();
+		}
+	}
+/**
+	if(confirm("你要继续吗")){
+		window.location.href="http://www.yahoo.com";
+	}else{
+		alert("bye");
+	}
+**/
+
+	with (document) {
+		write("屏幕设定值<br>");
+		write("实际高度：", screen.availHeight, "<br>");
+		write("实际宽度：", screen.availWidth, "<br>");
+		write("屏幕区域高度： ", screen.height, "<br>");
+		write("屏幕区域宽度:", screen.width, "<br>");
+	}
+</script>
+	密码:<input type="password" onblur="checkPassword(this);">
+</body>
+</html>

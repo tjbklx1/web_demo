@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+
+
+	function Shape(edge) {
+		this.edge = edge;
+	}
+
+	Shape.prototype.getArea = function() {
+		return -1;
+	}
+
+	Shape.prototype.getEdge = function() {
+		return this.edge;
+	}
+
+	function Triangle(bottom, height) {
+		Shape.call(this, 3);
+
+		this.bottom = bottom;
+		this.height = height;
+	}
+
+	Triangle.prototype = new Shape();
+
+	Triangle.prototype.getArea = function() {
+		return 0.5 * this.bottom * this.height;
+	}
+
+	//Triangle.prototype.getEdge = function()
+	//{
+	//	return this.edge;
+	//}
+
+	var triangle = new Triangle(10, 4);
+
+	//alert(triangle.getEdge());
+	//alert(triangle.getArea());
+
+	function Rectangle(bottom, height) {
+		Shape.call(this, 4);
+
+		this.bottom = bottom;
+		this.height = height;
+	}
+
+	Rectangle.prototype = new Shape();
+
+	Rectangle.prototype.getArea = function() {
+		return this.bottom * this.height;
+	}
+
+	//Rectangle.prototype.getEdge = function()
+	//{
+	//	return this.edge;
+	//}
+
+	var rectangle = new Rectangle(20, 40);
+
+	alert(rectangle.getEdge());
+	alert(rectangle.getArea());
+</script>
+<body>
+
+</body>
+</html>

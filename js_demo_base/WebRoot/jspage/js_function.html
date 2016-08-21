@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Javascript 函数</title>
+</head>
+
+<script type="text/javascript">
+//	alert("*");
+	// JS中的函数不能重载, 后写的覆盖先写的
+//	function getArea(a,b){
+//		return  a*b ;
+//	}
+//	function getArea(r){
+//		return 3.14*r*r
+//	}
+//	alert(getArea(10,5));
+//	alert(getArea(10));
+	
+	// arguments是JS的方法中的一个隐藏对象, 是一个由所有实参组成的数组.
+//	function fun(){
+//		for(var x=0;x<arguments.length;x++)
+//			alert(arguments[x]);
+//	}
+//	fun();
+//	fun(1,2,3,4);
+//	fun(1,2,3,4,5,6,77,88);
+	
+//	function fun(a,b,c,d,e,f){
+//		alert(a);
+//		alert(b);
+//		alert(c);
+//		alert(d);
+//		alert(e);
+//		alert(f);
+//	}
+//	fun(1,2,3);
+	
+//	function fun(){
+//		return "abc";
+//	}	
+//	var x=fun;// 变量也可以赋值为一个方法
+//	alert(x);	
+//	var y=x(); // x赋值为方法之后, 也可以当做方法来调用
+//	alert(y);
+//	alert(fun);
+	
+//	var a = "alert(x+y);";
+//	var b = "alert(x*y);";
+//	var demo = new Function("x,y", a);
+//	demo(4,6);
+	
+//	function demo(x,y){
+//		alert(x+y);
+//	}
+//	demo(4,6);
+	
+//	function fun(){
+//		alert("函数运行了");
+//	}
+//	fun();
+	
+//	var a = function(){
+//		alert("函数运行了");
+//	}
+//	a();
+	
+	// 在窗体加载完毕之后, 运行这个方法
+//	window.onload = function(){		
+//		alert("函数运行了");
+//	};
+//	alert("函数运行 first");
+			 // 重点
+			// 		正常定义方式
+			 // 		匿名函数, 通常用在事件处理
+			// 		arguments内置对象, 用来接收所有实参
+			 // 		JS中的函数不能重载, 后写的覆盖先写的
+</script>
+<body>
+</body>
+</html>

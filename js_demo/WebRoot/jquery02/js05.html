@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+		<style type="text/css">
+table {
+	border: 5px solid gray;
+}
+
+tr td {
+	border-bottom: 2px solid black;
+	padding: 10px;
+}
+
+thead td {
+	background: #859cfa;
+}
+
+.bgcolor {
+	background: #871234
+}
+
+tr.chgcolor td { /*chgcolor只可以使用在tr上。当使用了这个chgcolor之后，所有的td都设置成green*/
+	background: green;
+}
+</style>
+		<script type="text/javascript" src="../jquery-1.6.2.js"></script>
+</head>
+<script type="text/javascript">
+	$(document).ready( function(){
+	//	$('tbody tr').css("background","red");
+		$('tbody tr:even').css("background","red");
+		$('tbody tr')
+		.mouseover(function(){
+		//	$(this).css("background","green");
+			$(this).addClass("chgcolor");
+		})
+		.mouseout(function(){
+			$(this).removeClass("chgcolor");
+		});
+
+
+
+
+		
+	});
+	
+</script>
+<body>
+	<table class="spring" width="50%" border="0" cellpadding="0"
+			cellspacing="0">
+			<thead>
+				<tr>
+					<td>姓名	</td><td>年龄</td><td>QQ</td><td>EMail</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>张三	</td><td>89</td><td>998898889</td><td>zhangsan@itcast.com</td>
+				</tr>
+				<tr>
+					<td>李四</td><td>29</td>	<td>339939333</td><td>lisi@itcast.cn</td>
+				</tr>
+				<tr>
+					<td>王五</td><td>22</td>	<td>8833213</td><td>wangwu@itcast.cn</td>
+				</tr>
+				<tr>
+					<td>码六	</td><td>88</td><td>3445544</td><td>maliu@itcast.cn	</td>
+				</tr>
+			</tbody>
+		</table>
+</body>
+</html>

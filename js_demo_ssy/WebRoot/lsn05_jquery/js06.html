@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../jquery-1.6.2.js"></script>
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	$(document).ready( function(){
+		$("#myButton").click(function(){
+			var count = $("input[name='myCheck']:checked").length;
+			alert("select count is : "+ count);
+		});	
+	});
+/**
+	window.onload = function(){
+		var btn = document.getElementById("myButton");
+		btn.onclick = function(){
+			var count = 0;
+			var checkboxs = document.getElementsByName("myCheck");
+			for(var i = 0;i<checkboxs.length ; i++){
+				if(checkboxs[i].checked) { count++; }
+			}
+			alert("select count is : "+ count);
+		}
+	}
+*/
+</script>
+<body>
+	
+	<input type="checkbox" name="myCheck" checked="checked">
+	<input type="checkbox" name="myCheck">
+	<input type="checkbox" name="myCheck" checked="checked">
+	<input type="checkbox" name="myCheck">
+	<input type="checkbox" name="myCheck">
+	<br><br>
+	<input type="button" value="click me" id="myButton">
+
+</body>
+</html>

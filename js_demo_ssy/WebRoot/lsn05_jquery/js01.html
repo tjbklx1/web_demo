@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../jquery-1.6.2.js"></script>
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+
+
+	//ready方法的作用是当页面中的dom加载完毕后执行参数中的函数
+	$(document).ready(function() {
+		alert("hello");
+	});
+
+	$(document).ready(function() {
+		alert("world");
+	});
+
+	function test1() {
+		alert("hello");
+	}
+
+	function test2() {
+		alert("world");
+	}
+
+	window.onload = test1;
+	window.onload = test2;
+
+	//javascript 的调用方法时有后面的方法覆盖前面的方法
+	//jquery 的不会出现这种情况
+</script>
+<body>
+
+</body>
+</html>

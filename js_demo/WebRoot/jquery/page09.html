@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../jquery-1.6.2.js"></script>
+<title>动画测试</title>
+<style>
+		div{
+			border:2px solid black;
+			width:100px;
+			height:100px;			
+		}					
+	</style>
+<script type="text/javascript">
+	$(function(){
+		$("div").click(function(){
+		  if($(this).hasClass("protected"))
+		    $(this).animate({width:200,height:200,left:-40},3000);
+		     
+		});
+		//设置显示一部分 鼠标的移动
+		$(".protected").mouseover(function(){
+			   $(this).css({left:0,border:'2px dotted blue'});
+		})
+		.mouseout(function(){
+				$(this).css({left:-50,border:'1px solid green'});
+		});
+	});	
+</script>
+</head>
+<body>	
+	<div class="protected" style="left:300px; position: absolute">aaaa</div>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>	
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<div>bbb</div>
+ 		
+</body>
+</html>

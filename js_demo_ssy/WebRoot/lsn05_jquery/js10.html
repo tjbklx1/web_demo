@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript" src="../jquery-1.6.2.js"></script>
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+
+  $(function()
+  {
+	$("#button1").click(function()
+	{
+		$("div:contains('test')").css("background", "red");
+	});
+
+    $("#button2").click(function()
+	{
+		$("div:empty").css("background", "green");
+	});
+
+	$("#button3").click(function()
+	{
+		$("div:has(.mini)").css("background", "blue");
+	});
+
+	$("#button4").click(function()
+	{
+		$("div:parent").css("background", "#abaaee");
+	});
+
+  });
+
+
+
+  </script>
+
+ <body>
+
+
+ <h3>内容过滤选择器.</h3>
+ 
+<input type="button" value="test1" id="button1">
+<input type="button" value="test2" id="button2">
+<input type="button" value="test3" id="button3">
+<input type="button" value="test4" id="button4">
+
+
+
+   <div class="one" id="one" >
+ id为one,class为one的div
+      <div class="mini">class为mini</div>
+  </div>
+
+    <div class="one"  id="two" title="test" >
+	 id为two,class为one,title为test的div.
+      <div class="mini"  title="other">class为mini,title为other</div>
+      <div class="mini"  title="test">class为mini,title为test</div>
+  </div>
+
+  <div class="one">
+      <div class="mini">class为mini</div>
+      <div class="mini">class为mini</div>
+	  <div class="mini">class为mini</div>
+	  <div class="mini"></div>
+  </div>
+
+
+
+  <div class="one">
+      <div class="mini">class为mini</div>
+      <div class="mini">class为mini</div>
+	  <div class="mini">class为mini</div>
+	  <div class="mini"  title="tesst">class为mini,title为test</div>
+  </div>
+
+
+  <div style="display:none;"  class="none">style的display为"none"的div</div>
+  
+  <div class="hide">class为"hide"的div</div>
+ 
+  <div>
+  包含input的type为"hidden"的div<input type="hidden" size="8"/>
+  </div>
+  
+ </body>
+</html>

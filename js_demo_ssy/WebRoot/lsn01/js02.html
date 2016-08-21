@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+	test();
+	//局部变量与全局变量
+	var global ="global";
+	function test(){
+		var local="local";
+		document.write("global : "+global+"<br/>");
+		document.write("local : "+local+"<br/>");
+		document.write("-------------"+"<br/>");
+	}
+	document.write("global : "+global+"<br/>");
+	//document.write("local : "+local+"<br/>"); 未定义
+
+	//with 的用法
+	with(document){
+		write("<ul>");
+		write("<li>abc</li>");
+		write("<li>abc</li>");
+		write("</ul>");
+	}
+	</script>
+</body>
+</html>

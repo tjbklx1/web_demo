@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<script type="text/javascript">
+		window.onload= function(){
+		
+			var addButton =document.getElementById("addButton");
+			var cloneButton =document.getElementById("cloneButton");
+			var removeButton =document.getElementById("removeButton");
+			var replaceButton =document.getElementById("replaceButton");
+			var createTextButton =document.getElementById("createTextButton");
+			
+			var n=0;
+			addButton.onclick = function(){
+				var newObj =document.createElement("input");
+				document.body.appendChild(newObj);
+				newObj.value = ++n;
+			}
+		
+			cloneButton.onclick = function(){
+				var cloneDiv = document.getElementsByTagName("div")[0].cloneNode(true);
+				document.body.insertBefore(cloneDiv, cloneButton);
+			}
+			
+			var removeButton = document.getElementById("removeButton");
+			removeButton.onclick = function(){
+				document.body.removeChild(document.body.firstChild);	
+			}	
+			
+			var replaceButton = document.getElementById("replaceButton");
+			replaceButton.onclick = function(){
+				var previous = replaceButton.previousSibling;
+				document.body.replaceChild(replaceButton, previous);
+			}
+			
+			var createTextButton = document.getElementById("createTextButton");
+			createTextButton.onclick = function(){
+				var newTextObj = document.createTextNode("新创建的文本");
+				document.body.appendChild(newTextObj);
+			}
+		}
+	</script>
+	<body>
+		<input type="button" value="这是第一个按钮">
+		<input type="button" value="这是第二个按钮">
+		<input type="button" value="这是第三个按钮">
+		<div>
+			<input type="button" value="这是第四个按钮">
+			<input type="button" value="这是第五个按钮">
+			<input type="button" value="这是第六个按钮">
+		</div>
+		<input type="button" value="添加文本框" id="addButton">
+		<br>
+		<input type="button" value="克隆DIV" id="cloneButton">
+		<br>
+		<input type="button" value="删除元素" id="removeButton">
+		<br>
+		<input type="button" value="替换元素" id="replaceButton">
+		<br>
+		<input type="button" value="创建文本" id="createTextButton">
+		<br>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+	//对象 以及为对象添加方法
+	
+	
+/**
+	function number(name,gender){
+		this.name = name;
+		this.gender = gender;
+	}
+
+	var m1=new number("a",23);
+	var m2=new number("b",123);
+	var m3=new number("c",232);
+
+	with(document){
+		write(m1.name+" = "+m1.gender+"<br>");
+		write(m2.name+" = "+m2.gender+"<br>");
+		write(m3.name+" = "+m3.gender+"<br>");
+	}
+**/
+
+	function number(name,gender){
+		this.name = name;
+		this.gender = gender;
+		this.display = display;
+	}
+
+	function display(){
+		var str = this.name +" = "+this.gender;
+		document.write(str+"<br>");
+	}
+	
+	var m1=new number("a",23);
+	var m2=new number("b",123);
+	var m3=new number("c",232);
+
+	m1.display();
+	m2.display();
+	m3.display();
+
+	</script>
+</body>
+</html>

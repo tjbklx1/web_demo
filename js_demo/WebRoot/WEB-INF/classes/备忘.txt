@@ -1,0 +1,5 @@
+这个工程下得代码 是在传智播客学习的工程中 复习的代码
+
+ajax 
+jquery-ajax
+jquery

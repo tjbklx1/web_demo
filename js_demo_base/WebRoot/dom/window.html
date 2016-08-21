@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Window</title>
+</head>
+<script type="text/javascript">
+//	onscroll=function(){
+//		alert("窗口滚动了");
+//	}
+	
+//	alert("加载之前");
+//	onload = function(){
+//		alert("窗体加载之后");
+//	}
+	
+	// 确认对话框, 返回true或false
+//	var b = confirm("确定要删除吗?");		
+//	alert(b);
+	
+	// 输入对话框, 返回对话框中输入的文本
+//	var name = prompt("请输入您的姓名","");	
+//	alert(name);
+	
+	onload = function(){
+//		var arr = document.getElementsByTagName("input");
+//		alert(arr.length);  //11
+	
+		var n = 0;
+		var div1 = document.getElementById("div1");
+		var runButton = document.getElementById("runButton");	
+		var stopButton = document.getElementById("stopButton");	
+		var startTimeOut = document.getElementById("startTimeOut");	
+		var stopTimeOut = document.getElementById("stopTimeOut");	
+		var id;	
+		var timeOutId;		
+	
+		runButton.onclick = function(){
+			// 将run方法每100毫秒运行1次, 返回一个id, 用作以后停止
+			id = setInterval(run, 100);	
+		}
+				
+		stopButton.onclick = function(){
+			// 根据id清除计时器
+			clearInterval(id);		
+		}
+		
+		function run(){
+			div1.innerText = ++n;
+		}
+		function timeUp(){
+			alert("到时间了");
+		}
+				
+		startTimeOut.onclick = function(){
+			timeOutId = setTimeout(timeUp, 3000);		// 指定时间之后运行一次, 仅一次
+		}
+		
+		stopTimeOut.onclick = function(){
+			clearInterval(timeOutId);
+		}
+		
+		var closeButton = document.getElementById("closeButton");
+		closeButton.onclick = function(){
+			close();
+		}
+		
+		var openFormButton = document.getElementById("openFormButton");
+		openFormButton.onclick = function(){
+			open("form/form.html", "win1");
+		}
+		
+		var openSuccessButton = document.getElementById("openSuccessButton");
+		openSuccessButton.onclick = function(){
+			open("form/success.html", "win1");
+		}
+		
+		var openAdButton = document.getElementById("openAdButton");
+		openAdButton.onclick = function(){
+			open("form/吴克群.jpg", "win2", "width=400, height=400, status=no, toolbar=no, menubar=no, location=yes, top=100, left=100");
+		}
+		
+		var gotoSuccessButton = document.getElementById("gotoSuccessButton");
+		gotoSuccessButton.onclick = function(){
+			location = "form/success.html";
+		}
+		
+		var forward = document.getElementById("forward");
+		forward.onclick = function(){
+			history.forward();	// 前进
+		}
+		
+		var back = document.getElementById("back");
+		back.onclick = function(){
+			history.back();		// 后退
+		}
+	}
+</script>
+<body>
+		<div id="div1">&nbsp;</div>
+		<input type="button" id="runButton" value="走">
+		<input type="button" id="stopButton" value="停">
+		<br>
+		<input type="button" value="开始计时" id="startTimeOut">
+		<input type="button" value="停止计时" id="stopTimeOut">
+		<br>
+		<input type="button" value="关闭窗口" id="closeButton">
+		<br>
+		<input type="button" value="打开form" id="openFormButton">
+		<input type="button" value="打开success" id="openSuccessButton">
+		<input type="button" value="打开广告" id="openAdButton">
+		<br>
+		<input type="button" value="当前页面跳转到success" id="gotoSuccessButton"> 
+		<br>
+		<input type="button" value="前进" id="forward">
+		<input type="button" value="后退" id="back">
+</body>
+</html>

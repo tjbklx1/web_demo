@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../jquery-1.6.2.js"></script>
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	$(document).ready( function(){
+		
+		alert("隐藏子元素 "+$('.test :hidden').length); //选择class为test的元素当中的隐藏子元素
+		alert($('.test:visible').length); //选择隐藏的class为test的元素
+
+
+
+	});
+</script>
+<body>
+ <div class="test">
+    <div style="display:none">aaaa</div>
+    <div style="display:none">bbbb</div>
+    <div style="display:none">cccc</div>
+    <div class="test" style="display:none">dddd</div>
+ </div>
+
+ <div class="test" style="display:none">eeee</div>
+
+ </body>
+</html>

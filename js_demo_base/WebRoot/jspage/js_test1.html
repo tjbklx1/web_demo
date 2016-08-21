@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+		<title>Untitled Document</title>
+		<script type="text/javascript">
+			window.onload = function(){		// 要获取元素时必须等到窗体加载结束
+				var sImg = document.getElementById("sImg");		// 根据ID获取元素
+				var bImg = document.getElementById("bImg");		
+				sImg.onmouseenter = function(){		// 给sImg添加鼠标进入事件处理
+					bImg.style.display = "block";	// 显示大图
+				}
+				sImg.onmouseleave = function(){		// 给sImg添加鼠标移出事件处理
+					bImg.style.display = "none";	// 隐藏大图
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<img src="../img_html/a.jpg" width="80" id="sImg"><br>
+		<img src="../img_html/a.jpg" style="border:1px solid; margin-left:80px; display:none" id="bImg">
+	</body>
+</html>

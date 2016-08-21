@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+
+
+	function Person(name, age) {
+		this.name = name;
+		this.age = age;
+		this.sayHello = function() {
+			alert("hello " + this.name);
+		}
+	}
+	function Tom() {
+	}
+	Tom.prototype = new Person("Tom", 88);
+
+	var t = new Tom();
+	alert(t.name);
+	t.sayHello(); //调用父类方法
+	
+</script>
+<body>
+
+</body>
+</html>

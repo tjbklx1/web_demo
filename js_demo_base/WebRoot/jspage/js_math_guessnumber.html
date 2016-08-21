@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>猜数字</title>
+</head>
+<script type="text/javascript">
+	window.onload=function(){
+// random()本身是从0到0.9999, 乘以100之后是0到99.9999+1
+		var random =Math.random()*100+1;
+		random =Math.floor(random);
+		
+		var num=document.getElementById("num");
+		var guess=document.getElementById("guess");
+		var times;	// 记住猜了多少次
+		
+		// 给按钮添加点击事件处理
+		guess.onclick=function(){
+		// 当点了按钮时, 拿文本框中的数字和随机数比较, 弹出比较结果
+		var x = num.value;
+					
+		// 判断x是否不是一个数字
+		if(isNaN(x)){
+			alert("请输入一个数字");
+			num.value = "";
+			return;
+		}
+		if(x > 100 || x < 1){
+			alert("请仔细阅读题目, 该数字是一个1-100以内的数字.");
+			num.value = "";
+			return;
+		}
+					
+		if(x > random)
+			alert("大了");
+		else if(x < random)
+			alert("小了");
+		else
+			alert("对了");
+						
+		if(++times > 9)
+			alert("猜了10次都没中, 您不适合玩此类游戏.");
+						
+			num.value = "";	//结束后将文本框置为空
+		}
+	}
+</script>
+<body>
+	请输入一个1-100的数字: <input id="num"> 
+	<input type="button" value=" 猜 " id="guess">
+</body>
+</html>

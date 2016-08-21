@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+		<title>Untitled Document</title>
+		<script type="text/javascript">
+			onload = function(){
+				var times = 0;
+				document.body.onclick = function(){
+                    var fs = parent.document.getElementsByTagName("frameset")[0];
+                    if (times++ % 2 == 0) 
+                        fs.setAttribute("cols", "0%,10px,*");
+                    else 
+                        fs.setAttribute("cols", "15%,10px,*");
+				}
+			}
+		</script>
+	</head>
+	<body bgcolor="#00ffff">
+	</body>
+</html>

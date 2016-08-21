@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+
+
+	function test1() {
+		var object = new Object();
+
+		object.name = "zhangsan";
+		object.sayName = function(name) {
+			this.name = name;
+			alert(this.name);
+		}
+		object.sayName("lisi");
+	}
+	//test1();
+/**********************************************************/
+	//工厂方式创建对象
+
+	function createObject() {
+		var object = new Object();
+		object.username = "zhangsan";
+		object.password = "123";
+
+		object.get = function() {
+			alert(this.username + ", " + this.password);
+		}
+		return object;
+	}
+
+	function test2() {
+
+		var object1 = createObject();
+		var object2 = createObject();
+		object1.get();
+	}
+	//test2();
+/**************************************************/
+	
+	//根据参数创建
+	function createObject2(username, password) {
+		var object = new Object();
+		object.username = username;
+		object.password = password;
+
+		object.get = function() {
+			alert(this.username + ", " + this.password);
+		}
+		return object;
+	}
+
+	function test3() {
+		var object1 = createObject2("zhangsan", "123");
+		var object2 = createObject2("zhangsanqwqwe", "123");
+		object1.get();
+		object2.get();
+	}
+	//test3();
+/************************************************************/
+
+	//创建对象和调用的方法分离
+	function get() {
+		alert(this.username + ", " + this.password);
+	}
+
+	function createObject3(username, password) {
+		var object = new Object();
+		object.username = username;
+		object.password = password;
+		object.get = get;
+		return object;
+	}
+	function test4() {
+		var object = createObject3("zhangsan", "123");
+		var object2 = createObject3("lisi", "456");
+		object.get();
+		object2.get();
+	}
+	test4();
+	
+</script>
+<body>
+
+</body>
+</html>

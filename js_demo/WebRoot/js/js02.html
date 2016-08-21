@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+
+	function create() {
+		var http = new ActiveXObject("microsoft.XMLHTTP");
+		alert(http);
+	}
+
+	function create02() {
+		try {
+			//var http=new ActiveXObject("microsoft.XMLHTTP");
+			var http = new XMLHttpRequest();
+			alert(http);
+		} catch (ee) {
+			for ( var a in ee){
+			//	document.write(a + "<br/>");
+				document.write(a + "===" + ee[a] + "<br/>");
+				document.write(ee.message + "<br/>");
+			}
+		}
+	}
+</script>
+<body>
+	
+	本例测试ie用哪种获得对象Object的方式 <br/>
+	<br/>
+	<button onClick="create();">Test IE</button><br/>
+	<button onClick="create02();">Test Firefox</button>
+</body>
+</html>

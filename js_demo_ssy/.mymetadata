@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="js_demo_shengsiyuan"
+  id="myeclipse.1349859180015"
+  context-root="/js_demo_shengsiyuan"
+  j2ee-spec="5.0"
+  archive="js_demo_shengsiyuan.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+

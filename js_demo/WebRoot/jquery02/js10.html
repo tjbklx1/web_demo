@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../jquery-1.6.2.js"></script>
+<title>选项卡测试</title>
+<style>
+	.div{
+		border:0px solid red;
+		width:80px;
+		height:20px;
+		float:left;
+		margin:0px;
+		text-align: center;
+		padding-top: 5px;
+		cursor: hand;
+	}
+	
+	.contant{
+		border:0px solid red;
+		width:245px;
+		height:100px;
+		clear:left;
+		margin:0px;
+		padding-top:5px;
+		display:none;		
+		background:gray;
+	}
+	
+	.bg{
+		background:gray;
+	}	
+</style>
+</head>
+<script type="text/javascript">
+	$(document).ready( function(){
+	/*
+		$(".div").click(function(idx){
+			alert("idx: "+idx);
+			$(".contant:eq("+idx+")").show();
+		});
+	*/
+		$.each($(".div"),function(idx){
+			$(this).click(function(){
+				//alert(idx);		//slow,5000=5s
+				//光标一进一出改变则把click改为mouseover
+				$(this).addClass("bg").siblings('.div').removeClass("bg");   
+				$(".contant:eq("+idx+")").show().siblings('.contant').hide();					
+			});
+			//默认第一项被选中
+			$(".div:first").click();
+		});
+		
+
+	});
+</script>
+<body>
+		<div class="div">电脑</div>
+		<div class="div">手机</div>
+		<div class="div">人口</div>
+		
+		<div class="contant">
+			<a href="#">笔记本</a><br/>
+			<a href="#">Pad</a><br/>
+		</div>
+		<div class="contant">
+			<a href="#">iPohone</a><br/>
+			<a href="#">Andriod</a>
+		</div>
+		<div class="contant">
+			<a href="#">男人</a><br/>
+			<a href="#">女地</a>
+		</div>
+</body>
+</html>

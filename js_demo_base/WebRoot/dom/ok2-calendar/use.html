@@ -1,0 +1,20 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>JavaScript日期输入控件</title>
+</head>
+<script language="javascript" src="JTimer.js"></script>
+<script language="javascript" src="ok2.js"> </script>
+<body>
+	<span id="message"></span>
+<form name="form1" method="post" action="b.html">
+<br>
+<br>
+<p><input type="text" id="start" readonly="readonly" onclick="JTC.setday(this)">开始日期：</p>
+<p><input type="text" id="end" readonly="readonly" onclick="JTC.setday(this)">结束日期：</p>
+
+<br>
+<input type="button" onclick="check();"value="submit">
+</form>
+</body>
+</html>

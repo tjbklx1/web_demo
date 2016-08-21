@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+		<title>Untitled Document</title>
+		<style type="text/css">
+			input {
+				width:150px;				
+			}
+		</style>
+		<script type="text/javascript">
+			// 当窗体加载之后
+			window.onload = function(){
+				// 获取所有页面上的组件
+				var store = document.getElementById("store");
+				var cut = document.getElementById("cut");
+				var cloth = document.getElementById("cloth");
+				var mine = document.getElementById("mine");
+				var guess = document.getElementById("guess");
+				var computer = document.getElementById("computer");
+				
+				// 给石头剪刀布三个按钮添加点击事件, 如果这3个按钮被点击, 那么mine文本框的value等于按钮的value
+				function click(){
+					mine.value = this.value;
+				}
+				store.onclick = click;
+				cut.onclick = click;
+				cloth.onclick = click;
+				
+				
+				guess.onclick = function(){
+					// 如果猜按钮被点击, 那么生成一个0-2的随机数
+					var x = Math.floor(Math.random()*3);
+					
+					// 如果随机数是0, 那么电脑出拳显示石头, 1显示剪刀, 2显示布
+					if(x == 0)
+						computer.value = "石头";
+					else if(x == 1)
+						computer.value = "剪刀";
+					else
+						computer.value = "布";
+						
+					// 最后用mine的value和computer的value比较, 弹出比较结果
+					var mv = mine.value;
+					var cv = computer.value;
+					if(mv == cv)
+						alert("平局");
+					else if(mv == "石头")
+						if(cv == "剪刀")
+							alert("赢了");
+						else
+							alert("输了");
+					else if(mv == "剪刀")
+						if(cv == "布")
+							alert("赢了");
+						else
+							alert("输了");
+					else if(mv == "布")
+						if(cv == "石头")
+							alert("赢了");
+						else
+							alert("输了");
+							
+					// 将两个文本框中的value清空
+					mine.value = "";
+					computer.value = "";
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="石头" id="store"> <input type="button" value="剪刀" id="cut"> <input type="button" value="布" id="cloth"><br><br>
+		您出的拳是:　 <input id="mine"><br><br>
+		<input type="button" value="猜" id="guess"><br><br>
+		电脑出的拳是: <input id="computer">
+	</body>
+</html>
