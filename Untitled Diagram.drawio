@@ -1,34 +1,29 @@
-<mxfile host="app.diagrams.net" modified="2021-11-22T03:48:10.053Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36" etag="jWTrJV8SPnz1fQu9Vq8F" version="15.8.3" type="github">
+<mxfile host="app.diagrams.net" modified="2021-11-22T06:24:56.270Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36" etag="Y58p709-pH4lu4ApJeEf" version="15.8.3" type="github">
   <diagram name="Page-1" id="edf60f1a-56cd-e834-aa8a-f176f3a09ee4">
     <mxGraphModel dx="1038" dy="579" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="60e70716793133e9-2" value="删除账号&lt;br&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;api/v1/deleteCustomer/delete&lt;/span&gt;" style="shape=trapezoid;whiteSpace=wrap;html=1;rounded=0;shadow=1;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=8;align=center;flipV=1;direction=east;" parent="1" vertex="1">
-          <mxGeometry x="90" y="80" width="350" height="60" as="geometry" />
+        <mxCell id="60e70716793133e9-2" value="记录投放留资信息&lt;br&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;saveMobileAdditionData&lt;/span&gt;" style="shape=trapezoid;whiteSpace=wrap;html=1;rounded=0;shadow=1;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=8;align=center;flipV=1;direction=east;" parent="1" vertex="1">
+          <mxGeometry x="100" y="20" width="350" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="60e70716793133e9-33" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;startSize=5;endArrow=classicThin;endFill=1;endSize=5;jettySize=auto;orthogonalLoop=1;strokeWidth=1;fontFamily=Verdana;fontSize=8" parent="1" source="60e70716793133e9-5" edge="1">
-          <mxGeometry x="-0.7778" y="10" relative="1" as="geometry">
+        <mxCell id="60e70716793133e9-33" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;startSize=5;endArrow=classicThin;endFill=1;endSize=5;jettySize=auto;orthogonalLoop=1;strokeWidth=1;fontFamily=Verdana;fontSize=8" parent="1" source="60e70716793133e9-5" edge="1">
+          <mxGeometry x="-0.2" y="10" relative="1" as="geometry">
             <mxPoint as="offset" />
-            <mxPoint x="390" y="250" as="targetPoint" />
+            <mxPoint x="170" y="370" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="60e70716793133e9-37" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;startSize=5;endArrow=classicThin;endFill=1;endSize=5;jettySize=auto;orthogonalLoop=1;strokeWidth=1;fontFamily=Verdana;fontSize=8" parent="1" source="60e70716793133e9-5" target="60e70716793133e9-9" edge="1">
-          <mxGeometry x="-0.5" y="10" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="60e70716793133e9-5" value="customerId是否存在?" style="rhombus;whiteSpace=wrap;html=1;rounded=0;shadow=1;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=8;align=center;" parent="1" vertex="1">
-          <mxGeometry x="200" y="220" width="100" height="60" as="geometry" />
+        <mxCell id="60e70716793133e9-5" value="当前IP是否超过最大限制?" style="rhombus;whiteSpace=wrap;html=1;rounded=0;shadow=1;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=8;align=center;" parent="1" vertex="1">
+          <mxGeometry x="200" y="220" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="60e70716793133e9-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;startSize=5;endArrow=classicThin;endFill=1;endSize=5;jettySize=auto;orthogonalLoop=1;strokeWidth=1;fontFamily=Verdana;fontSize=8" parent="1" source="60e70716793133e9-9" target="60e70716793133e9-11" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="60e70716793133e9-9" value="Create a work order" style="whiteSpace=wrap;html=1;rounded=0;shadow=1;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=8;align=center;" parent="1" vertex="1">
-          <mxGeometry x="190" y="320" width="120" height="40" as="geometry" />
+          <mxGeometry x="420" y="230" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="60e70716793133e9-11" value="Add materials to work order processes" style="whiteSpace=wrap;html=1;rounded=0;shadow=1;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=8;align=center;spacing=6;" parent="1" vertex="1">
-          <mxGeometry x="190" y="410" width="120" height="40" as="geometry" />
+          <mxGeometry x="580" y="410" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="60e70716793133e9-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;startSize=5;endArrow=classicThin;endFill=1;endSize=5;jettySize=auto;orthogonalLoop=1;strokeWidth=1;fontFamily=Verdana;fontSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="60e70716793133e9-11" target="60e70716793133e9-13" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -188,10 +183,26 @@
         <mxCell id="60e70716793133e9-30" value="End" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;rounded=0;shadow=1;labelBackgroundColor=none;fontFamily=Verdana;fontSize=8;align=center;" parent="1" vertex="1">
           <mxGeometry x="310" y="1290" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="dtDpgQWNprkFa9EgSx3r-1" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.458;exitY=-0.01;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="60e70716793133e9-2" target="60e70716793133e9-5">
+        <mxCell id="dtDpgQWNprkFa9EgSx3r-1" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.458;exitY=-0.01;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=none;" parent="1" source="Nt8RXGupDFDS8gTGMtQ--1" target="60e70716793133e9-5" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="250" y="210" as="sourcePoint" />
             <mxPoint x="310" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nt8RXGupDFDS8gTGMtQ--1" value="获取IP ,从缓存中获取IP数量" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Nt8RXGupDFDS8gTGMtQ--2" value="" style="endArrow=none;html=1;rounded=0;exitX=0.458;exitY=-0.01;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="60e70716793133e9-2" target="Nt8RXGupDFDS8gTGMtQ--1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="250.29999999999995" y="140.60000000000002" as="sourcePoint" />
+            <mxPoint x="250" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nt8RXGupDFDS8gTGMtQ--5" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;startSize=5;endArrow=classicThin;endFill=1;endSize=5;jettySize=auto;orthogonalLoop=1;strokeWidth=1;fontFamily=Verdana;fontSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="60e70716793133e9-5" target="60e70716793133e9-9">
+          <mxGeometry x="-0.2" y="20" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="325" y="380" as="targetPoint" />
+            <mxPoint x="355" y="260" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
       </root>
